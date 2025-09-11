@@ -1,7 +1,7 @@
 
 
 
-\section{Dream}
+\section{Introduction}
 
 The increasing digitisation of data and the widespread use of cloud services have amplified concerns surrounding the privacy and control of personal information more than ever before. 
 In response, regulators often impose requirements on removability without recognising that it is virtually impossible to make material once seen become unseen.
@@ -9,14 +9,14 @@ Entities that operate infrastructure underpinning digital publishing are in cont
 Such centralised gatekeeping may seem appealing from a regulatory standpoint, as it can be seen as an instrument of law enforcement. Although such interventions rarely solve the breach of unrealistic privacy rights, the gatekeeper still provides a well-defined responsible party with the effective course of action: not serving censored content.
 While this gives the unwary a false sense of security, it only exemplifies the larger issue of censorship: publishing platforms possess the technological means to filter content, and centralised control makes it more affordable to exert influence over the content.  What starts out as sensible measures of content curation gradually transforms into extant censorship. This is all the more problematic with social platforms that have gained quasi-monopolistic status as a result of network effects. Due to the high costs associated with switching platforms, innocent content creators increasingly find themselves 'deplatformed'. Similarly, the ability to identify hosts and deny access to content through legal means gives powers to be the means to infringe on freedom of speech. 
 
-In the decentralised paradigm of web 3, there is no longer a single operating entity controlling the publishing platform or the hosting infrastructure. This renders the the cost of censorship infeasible. And yet, the potential permanent exposure of personal data remains a significant concern for most individuals. Therefore, there is a need for novel solutions that can restore the sense of security that centralised gatekeepers purportedly represent. 
+In the decentralised paradigm of web 3, there is no longer a single operating entity controlling the publishing platform or the hosting infrastructure. This renders the cost of censorship infeasible. And yet, the potential permanent exposure of personal data remains a significant concern for most individuals. Therefore, there is a need for novel solutions that can restore the sense of security that centralised gatekeepers purportedly represent. 
 
-\subsection{Deletion and revoking access}
+\section{Deletion and revoking access}
 
 First, note that any reference to removal of information in the sense of erasing it from all physical storage devices is both unenforceable and impractical. Even the most rigorous data protection audits do not require the erasure of offending data from backup tapes. In general, the tacit assumption is that information ordered to be removed should become inaccessible through \emph{typical, precedented methods of access}.
 
 In what follows, we formulate the strongest meaningful definition of deletion applicable to decentralised storage systems and offer a construction that implements it.
-Importantly, this approach is purely technical, focusing on thecapabilities and costs of primary actors, rather than relying on  procedural measures that impose obligations on intermediaries to respect the rights of primary actors. 
+Importantly, this approach is purely technical, focusing on the capabilities and costs of primary actors, rather than relying on  procedural measures that impose obligations on intermediaries to respect the rights of primary actors. 
 
 The primary actors in this context are the \emph{uploaders} who wish to share content by granting read access to a number of parties, called \emph{downloaders}.  Granting access is defined as providing a canonical \emph{reference} to the content, allowing the system to eventually retrieve to the complete information that is intended to be disclosed. Any party that is privileged to access this information is able to store, re-code, and potentially disseminate it. This provides a myriad of ways to make the content accessible at any later point in time, bypassing any process that would qualify as deletion or removal of access. 
 There is, by definition, no protection possible against such adversity. As a consequence, any legally sound notion of deletion (retrospective revocation of access) is meant to be interpreted in a narrower sense: \emph{the viability to replay the same access method}  at a lower cost than the \emph{full cost} of storing the content.%
@@ -41,12 +41,12 @@ Let us now define deletion as a scheme for uploading content with access revocat
 %
 \end{itemize}
 
-Note that normally uploaded content may be \emph{forgotten}: if nobody pays for storing it and the content is not accessed frequently, the chunks constituting it will be garbage-collected. However, chunks with expired postage stamps cannot be regarded as reliably deleted in order to to satisfy the requirements of sovereignty and security. 
+Note that normally uploaded content may be \emph{forgotten}: if nobody pays for storing it and the content is not accessed frequently, the chunks constituting it will be garbage-collected. However, chunks with expired postage stamps cannot be regarded as reliably deleted in order to satisfy the requirements of sovereignty and security. 
 
 
-\subsection{Construction}
+\section{Construction}
 
-The goal of this section is to arrive at a formal construction of a DISC-based revocable access model. We will restrict our scheme to \emph{chunks}, the fundamental fixed-size storage units of Swarm's DISC model.  The proposed \emph{dream} construct implements a deletable content storage and access model that fulfills the requirements of specialisation, sovereignty, and security. The use of the word 'dream' alludes to the somewhat unexpected finding that such a construct is even possible in the immutable DISC model. On top of this, as is customary in Swarm, it serves as a mnemonic acronym, resolving to the 5 \emph{dream attributes} expressing requirements of access control.
+The goal of this section is to arrive at a formal construction of a DISC-based revocable access model. We will restrict our scheme to \emph{chunks}, the fundamental fixed-size storage units of Swarm's DISC model.  The proposed \emph{dream} construct implements a deletable content storage and access model that fulfils the requirements of specialisation, sovereignty, and security. The use of the word 'dream' alludes to the somewhat unexpected finding that such a construct is even possible in the immutable DISC model. On top of this, as is customary in Swarm, it serves as a mnemonic acronym, resolving to the 5 \emph{dream attributes} expressing requirements of access control.
 
 \begin{itemize}
     \item[\textbf{D}] \emph{deniable} -- The dream key serves as a one-time pad for decryption. Since multiple content chunks (in fact, any arbitrary content) can use the same dream pad, the key's association to any content is plausibly deniable.
@@ -105,7 +105,6 @@ Nevertheless, if two conditions are met, namely: 1) the bucket of batch $b$ desi
 
 Since the update function can be applied to its own output, we can define the \emph{dream path} as follows:
 
-
 \begin{eqnarray}
 \Pi(b,g)&\defeq&c_0,\ldots, c_n\in\mathit{Chunks}\{n\}\\
 c_i&\defeq&\begin{cases}
@@ -114,6 +113,13 @@ c_i&\defeq&\begin{cases}
 \end{cases}
 \end{eqnarray}
 
+\begin{figure}[htbp]
+  \centering
+    \includegraphics[width=0.65\textwidth]{figs/dream.pdf}
+  \caption{The dream protocoll: collective decryption of content}
+\label{fig:disc}
+\end{figure}
+    
 The dream path function is a pseudo-random generator that is defined by finite recursion. A \emph{dream} is a particular pairing of a generator and a one-time pad, which serve as the input and output of a dream path.
 Given a dream path of length $n$, a grantee overlay address $a$, and a batch $b$ with a uniformity depth of $d$, the uploader needs to find the generator $g$ such that the $n$-th chunk of the dream path falls within $a$'s neighbourhood (i.e., $\mathit{PO}(a,\textsc{address}(c_{n-1}))\geq d$).
 
@@ -126,7 +132,7 @@ Given a dream path of length $n$, a grantee overlay address $a$, and a batch $b$
 &&\mathit{PO}(a,H_{\mathit{bmt}}(k))\geq d
 \end{eqnarray}
 
-The uploader is able to construct the dream pad, which also allows them to calculate $k$ given $g$. Since $\mathit{H}(k)$ is uniform, the chance of $\mathit{PO}(a,\mathit{H}(k))\geq d$ is 1 in $2^{d}$. 
+The uploader is able to construct the dream pad, which also allows them to calculate $k$ given $g$. Since $\mathit{H}(k)$ is uniform, the chance of $\mathit{PO}(a,\mathit{H}(k))\geq d$ is 1 in $2^{d}$, therefore the uploader can find a suitable generator $g$ in $2^d$ attempts on average.
 
 
 
@@ -162,7 +168,7 @@ $U$ creates a dream generator $\langle g, k\rangle\in\mathit{dream}(b,d,n,a)$, t
 %
 \footnote{So far, references to swarm content included an address (\emph{Swarm hash} for unencrypted content) or an address with a decryption key (for encrypted content). The dream reference now defines a third type of reference, serialised in four segments comprising the parity address, the batch ID, the initial generator, and a decryption key.}
 
-\subsection{Analysis}
+\section{Analysis}
 
 % \subsection{Retrieval}
 % \label{def:retrieval}
@@ -201,10 +207,10 @@ To prove this, first let us assume that there is a bucket designated by some $p_
 % How to determine when to forward.
 % discuss the cost of a dream
 
-\subsection{Security}
+\section{Security}
 
 
-The reference does not leak any information about the step-count or the neighbourhoods involved. Neither are the participants in the protocol aware of their position in the chain or any detailsabout the other neighbourhoods, except for the immediate next one to which they are push-syncing their chunk.
+The reference does not leak any information about the step-count or the neighbourhoods involved. Neither are the participants in the protocol aware of their position in the chain or any details about the other neighbourhoods, except for the immediate next one to which they are push-syncing their chunk.
 
 The construction of the dream reference is deniable.
 Beside our sensitive content $C$, let us consider $A$, any uncontroversial content chunk. When producing $C'$, the owner also produces  $A'=A\xor k$ and uploads it. When asked about $k$, producing $A$ makes the denial of other content, including $C$, more plausible. 
@@ -214,7 +220,7 @@ Beside our sensitive content $C$, let us consider $A$, any uncontroversial conte
 % \footnote{With the growth of the Swarm network, the number of neighborhoods increases whereas the membership of neighborhoods remains about the same. Thus, the costs of attacking the proposed scheme are expected to increase with network size.}
 % %
 
-A powerful adversary could potentially infiltrate every neighborhood of Swarm and archive all information that has ever been uploaded (without being able to decipher it). They could also keep logs of what has been uploaded in what order, which would allow it to serve up deleted content on demand. However, there is a huge cost associated with such indiscriminate archiving of all Swarm's content, and that is the only way to reliably defeat the dream construction.
+A powerful adversary could potentially infiltrate every neighbourhood of Swarm and archive all information that has ever been uploaded (without being able to decipher it). They could also keep logs of what has been uploaded in what order, which would allow it to serve up deleted content on demand. However, there is a huge cost associated with such indiscriminate archiving of all Swarm's content, and that is the only way to reliably defeat the dream construction.
 
 We now turn to the discussion of how to calibrate the step-count in relation to the security model. Let us assume a network-wide neighbourhood infiltration rate of $\frac{1}{2}$, meaning that  half of the neighbourhoods in the network are assumed  to be  malicious and colluding. 
 
