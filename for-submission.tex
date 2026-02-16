@@ -2,21 +2,6 @@
 %%
 %% samples.dtx  (with options: `all,proceedings,bibtex,manuscript')
 %% 
-%% IMPORTANT NOTICE:
-%% 
-%% For the copyright see the source file.
-%% 
-%% Any modified versions of this file must be renamed
-%% with new filenames distinct from sample-manuscript.tex.
-%% 
-%% For distribution of the original source see the terms
-%% for copying and modification in the file samples.dtx.
-%%  
-%% This generated file may be distributed as long as the
-%% original source files, as listed above, are part of the
-%% same distribution. (The sources need not necessarily be
-%% in the same archive or directory.)
-%%
 %% Commands for TeXCount
 %TC:macro \cite [option:text,text]
 %TC:macro \citep [option:text,text]
@@ -37,91 +22,31 @@
 %% When submitting camera ready or to TAPS, please change the command
 %% to \documentclass[sigconf]{acmart} or whichever template is required
 %% for your publication.
+\documentclass[sigconf]{acmart}
 %%
-%%
-\documentclass[manuscript,screen,review]{acmart}
-%%
-\usepackage[hang,flushmargin]{footmisc}
-\usepackage{amsmath}
+% \documentclass[manuscript, screen, review]{acmart}
 \usepackage{amsthm}
-\usepackage{hyperref}
 \usepackage{enumitem}
-\usepackage{graphicx}
-\usepackage{scalerel}
 \newcommand\defeq{\overset{\textrm{\tiny  def}}{=}}
-\newcommand\Xor{\veebar}
 \newcommand\xor{\text{\small$\veebar$}}
-\DeclareMathOperator*{\XOR}{\scalerel*{\Xor}{\text{\small$\sum$}}}
+\DeclareMathOperator*{\XOR}{\underline{\bigvee}}
 \newcommand{\node}{\nu}
-\newcommand{\Chi}{\text{\large$\chi$}}
-\newcommand{\chimin}{\overline{\text{\large$\chi$}}}
 \newcommand{\idx}[1]{\texttt{[}\/#1\/\texttt{]}}
 \setlist[itemize]{label={---}}
 % the following code puts a line break after a description label even if label is shorter than leftmargin
 \renewcommand*{\descriptionlabel}[1]{\hspace\labelsep\parbox{\linewidth}{#1}}
 \newlist{labelledlist}{description}{2}
 \setlist[labelledlist]{style=nextline, leftmargin=2em, before=\renewcommand*{\descriptionlabel}[1]{\hspace\labelsep}}
-
-%% \BibTeX command to typeset BibTeX logo in the docs
-\AtBeginDocument{%
-  \providecommand\BibTeX{{%
-    Bib\TeX}}}
-
+%%
 %% Rights management information.  This information is sent to you
 %% when you complete the rights form.  These commands have SAMPLE
 %% values in them; it is your responsibility as an author to replace
 %% the commands and values with those provided to you when you
 %% complete the rights form.
-%\setcopyright{acmlicensed}
-%\copyrightyear{2018}
-%\acmYear{2018}
-%\acmDOI{XXXXXXX.XXXXXXX}
-%% These commands are for a PROCEEDINGS abstract or paper.
-%\acmConference[Conference acronym 'XX]{Make sure to enter the correct
-%  conference title from your rights confirmation email}{June 03--05,
-%  2018}{Woodstock, NY}
-%%
-%%  Uncomment \acmBooktitle if the title of the proceedings is different
-%%  from ``Proceedings of ...''!
-%%
-%%\acmBooktitle{Woodstock '18: ACM Symposium on Neural Gaze Detection,
-%%  June 03--05, 2018, Woodstock, NY}
-%\acmISBN{978-1-4503-XXXX-X/2018/06}
-
-
-%%
-%% Submission ID.
-%% Use this when submitting an article to a sponsored event. You'll
-%% receive a unique submission ID from the organizers
-%% of the event, and this ID should be used as the parameter to this command.
-%%\acmSubmissionID{123-A56-BU3}
-
-%%
-%% For managing citations, it is recommended to use bibliography
-%% files in BibTeX format.
-%%
-%% You can then either use BibTeX with the ACM-Reference-Format style,
-%% or BibLaTeX with the acmnumeric or acmauthoryear sytles, that include
-%% support for advanced citation of software artefact from the
-%% biblatex-software package, also separately available on CTAN.
-%%
-%% Look at the sample-*-biblatex.tex files for templates showcasing
-%% the biblatex styles.
-%%
-
-%%
-%% The majority of ACM publications use numbered citations and
-%% references.  The command \citestyle{authoryear} switches to the
-%% "author year" style.
-%%
-%% If you are preparing content for an event
-%% sponsored by ACM SIGGRAPH, you must use the "author year" style of
-%% citations and references.
-%% Uncommenting
-%% the next command will enable that style.
-%%\citestyle{acmauthoryear}
-
-
+\setcopyright{acmlicensed}
+\copyrightyear{2026}
+\acmYear{2026}
+\acmDOI{XXXXXXX.XXXXXXX}
 %%
 %% end of the preamble, start of the body of the document source.
 \begin{document}
@@ -129,7 +54,7 @@
 %%
 %% The "title" command has an optional parameter,
 %% allowing the author to define a "short title" to be used in page headers.
-\title{A dream come true: deletable content in immutable storage}
+\title[dream]{A dream come true: deletable content in immutable storage}
 
 %%
 %% The "author" command and its associated commands are used to define
@@ -141,19 +66,12 @@
 \authornote{Corresponding author}
 \email{viktor@ethswarm.org}
 \orcid{0009-0003-0222-6855}
-% \affiliation{%
-%   \institution{Swarm Research Division}
-%   \city{Neuch\^{a}tel}
-%   \country{Switzerland}
-% }
-
-% \author{D\'{a}niel A. Nagy}
-% \email{daniel@ethswarm.org}
 \affiliation{%
   \institution{Swarm Research Division}
   \city{Neuch\^{a}tel}
   \country{Switzerland}
 }
+
 \author{Henning Diedrich}
 \email{hd@lexon.org}
 \orcid{0009-0008-0798-0132}
@@ -163,20 +81,14 @@
     \country{Germany}
 }
 %%
-%%
-%% By default, the full list of authors will be used in the page
-%% headers. Often, this list is too long, and will overlap
-%% other information printed in the page headers. This command allows
-%% the author to define a more concise list
-%% of authors' names for this purpose.
+%% a more concise list of authors' names for the page head.
 \renewcommand{\shortauthors}{Tr\'{o}n \& Diedrich}
 
 %%
-%% The abstract is a short summary of the work to be presented in the
-%% article.
+%% The abstract is a short summary of the work to be presented in the article.
 \begin{abstract}
-This work introduces DREAM, a novel construct that enables deletable content in otherwise immutable, decentralised storage systems such as Swarm. As an equitable and feasible response to the challenge of data destruction, DREAM reconciles the inherent persistence of content-addressed storage with the practical needs, user preferences, and legal requirements of permanent access revocation.
-The paper contributes a new deletion model based on access revocation, and presents a mechanism that allows data-sharing users to grant—and later rescind—access to specific data for specific consumers. The solution leverages Swarm’s distributed storage architecture to introduce a procedural way to retrieve decryption keys, realised by a network protocol. The resulting system achieves the desired properties of deniability, revocability, expirability, addressability, and malleability without requiring trusted intermediaries or complex cryptographic primitives. The approach preserves the censorship resistance of decentralised systems allowing for sovereign control over data access by the original uploader, but not by any other party, thus avoiding any re-centralisation in order to achieve deletion. Security analysis shows that access revocation remains effective even under pervasive adversarial control.
+This work introduces a novel construct we call \emph{dream} that enables deletable content in otherwise immutable, decentralised storage systems such as Swarm. As an equitable and feasible response to the challenge of data destruction, our solution reconciles the inherent persistence of content-addressed storage with the practical needs, user preferences, and legal requirements of permanent revocation of access.
+The paper contributes a new deletion model based on access revocation, and presents a mechanism that allows data-sharing users to grant — and later rescind — access to specific data for specific consumers. The solution leverages Swarm’s distributed storage architecture to introduce a procedural way to retrieve decryption keys, realised through a network protocol. The resulting system achieves the desired properties of deniability, revocability, expirability, addressability, and malleability without requiring trusted intermediaries or complex cryptographic primitives. The approach preserves the censorship resistance of decentralised systems allowing for sovereign control over data access by the original uploader, but not by any other party, thus avoiding re-centralisation in order to achieve deletion. Security analysis shows that revocation remains effective even under pervasive adversarial control.
 \end{abstract}
 
 %%
@@ -208,11 +120,12 @@ The paper contributes a new deletion model based on access revocation, and prese
 % </ccs2012>
 % \end{CCSXML}
 
+
 % \ccsdesc[500]{Networks~Network algorithms}
 \ccsdesc[500]{Networks~Network protocols}
-\ccsdesc[500]{Information systems~Information storage systems}
-\ccsdesc[500]{Information systems~World Wide Web}
-\ccsdesc[500]{Security and privacy~Database and storage security}
+\ccsdesc[300]{Information systems~Information storage systems}
+\ccsdesc[300]{Information systems~World Wide Web}
+\ccsdesc[300]{Security and privacy~Database and storage security}
 % \ccsdesc[500]{Social and professional topics~Technology policy}
 %%
 %% Keywords. The author(s) should pick words that accurately describe
@@ -227,122 +140,123 @@ The paper contributes a new deletion model based on access revocation, and prese
 %% This command processes the author and affiliation and title
 %% information and builds the first part of the formatted document.
 \maketitle
+\pagestyle{plain}
 
 This paper is structured as follows:
-Section~\ref{sec:intro} acknowledges the need for data deletion and explains why, in practice, deletion is  typically implemented and understood as removal of access. It presents the challenges of realising deletion in decentralised storage systems, exploring the tension between censorship resistance and access control.
+Section~\ref{sec:intro} acknowledges the need for data deletion and explains why deletion is  typically implemented and understood in practice as removal of access. It presents the challenges of realising deletion in decentralised storage systems, exploring the tension between censorship resistance and access control.
 Section~\ref{sec:deletion} formalises the concept of deletion in the context of content-addressed networks like Swarm and derives the criteria required for meaningful access revocation.
-Section~\ref{sec:construction} describes the technical construction of the DREAM protocol, detailing its architecture, design rationale, and its five core properties.
+Section~\ref{sec:construction} describes the technical construction of the protocol, detailing its architecture, design rationale, and its five core properties.
 Section~\ref{sec:analysis} analyses the protocol’s correctness and behaviour under realistic network assumptions.
-Section~\ref{sec:security} provides a security model and evaluates the system’s resilience against adversarial behaviour, in particular, under conditions of pervasive network compromise.
-Section~\ref{sec:constraints} discusses the prerequisites for implementing DREAM and argues that adopting it would require only modest effort.
+Section~\ref{sec:security} provides a security model and evaluates the system’s resilience against adversarial behaviour, particularly under conditions of pervasive network compromise.
+Section~\ref{sec:constraints} discusses the prerequisites for implementing the protocol and argues that adopting it would require only modest effort.
 Section~\ref{sec:conclusion} concludes by summarising the findings and highlighting the broader implications of user-friendly, access-controlled deletion in the context of immutable storage.
 
 \section{Introduction} \label{sec:intro}
 
 The continuously increasing digitisation of data and the widespread use of cloud services in recent years have raised well-justified concerns regarding privacy and control of personal information \cite{voigt2017gdpr}. 
-In  response, regulators often impose requirements for data removability  with little regard for technical or practical feasibility. Beyond the truism that it is virtually impossible to make material once seen unseen, legal and economic realities often mean that ostensibly `deleted' data is merely hidden rather than physically erased. Social media platforms, for example, list a plethora of exceptions to reserve the right to not actually delete the data of a `deleted' account \cite{facebook2025privacy}. And while they are generally obliged by law to erase the data, some of their valid counter-arguments are themselves regulatory and legal requirements. Even at the technical level, a local, high-performance database like Facebook's workhorse, Apache Cassandra, does not actually delete data \cite{apache2025cassandra} when it is flagged as `deleted,' purely for the mundane reason of higher performance, i.e. lower cost.
+In  response, regulators often impose requirements for data removability  with little regard for technical or practical feasibility. Beyond the truism that it is virtually impossible to make material once seen unseen, legal and economic realities often mean that ostensibly `deleted' data is merely hidden rather than physically erased. Social media platforms, for example, list a plethora of exceptions to reserve the right not to actually delete the data of a `deleted' account \cite{facebook2025privacy}. And while they are generally obliged by law to erase the data, some of their valid counter-arguments are themselves regulatory and legal requirements. Even at the technical level, a local, high-performance database like Facebook's workhorse, Apache Cassandra, does not actually delete data \cite{apache2025cassandra} when it is flagged as `deleted,' purely for the mundane reason of higher performance, i.e. lower cost.
 
 But because entities that operate centralised infrastructure for digital publishing typically have full control over the systems that serve their content, they can carry out the effective `deletion' of data by simply \emph{denying access} to it. 
 
-No wonder then that centralised gatekeeping is appealing from a regulatory standpoint: it can be summoned as a convenient instrument of law enforcement. And sure enough, in case legal action is initiated, the law routinely forbids the destruction of data that could constitute evidence. The centralized gatekeeper is thus morphed into a responsible party with an effective, if paradoxical, course of action: not serving censored content, but preserving it.
+No wonder, then, that centralised gatekeeping is appealing from a regulatory standpoint: it can be summoned as a convenient instrument of law enforcement. And sure enough, when legal action is initiated, the law routinely forbids the destruction of data that could constitute evidence. The centralised gatekeeper is thus morphed into a responsible party with an effective, if paradoxical, course of action: not serving censored content, but preserving it.
 
-Even though this can give the unwary a false sense of privacy, it illustrates a deeper issue with censorship: publishing platforms possess the technological means to filter content, and centralised hosting makes it easy and economical to exert control over it. What may have started out as a benign and sensible measure of content curation can gradually transform into extant censorship \cite{chaum2021informationage,gillespie2018custodians}. This is all the more problematic with social platforms \cite{barnett2019platforms,klonick2018newgovernors} that have gained quasi-monopolistic status as a result of network effects \cite{zuckerman2014newcensorship}. This allowed governments to co-opt moderation tools in service of political agendas \cite{facebook2023pressure}. And due to the high costs associated with switching platforms, content creators increasingly find themselves 'deplatformed' \cite{zhang2021deplatforming} for violating the arbitrary and frequently changing publishing rules of the platforms they rely on. The ability to identify (central) hosts and coerce them through legal means to deny access to content provides authorities with a cheap and easy tool to curtail freedom of speech. 
+Even though this arrangement can give the unwary a phony sense of privacy, it illustrates a deeper issue with censorship: publishing platforms possess the technological means to filter content, and centralised hosting makes it easy and economical to exert control over it. What may have started out as a benign and sensible measure of content curation can gradually transform into extant censorship \cite{chaum2021informationage,gillespie2018custodians}. This concern is amplified in the context of social platforms \cite{barnett2019platforms,klonick2018newgovernors}, which have gained quasi-monopolistic status as a result of network effects \cite{zuckerman2014newcensorship}. Their position has allowed governments to co-opt moderation tools in service of political agendas \cite{facebook2023pressure}. High switching costs further leave content creators vulnerable to 'deplatforming' \cite{zhang2021deplatforming} for violating the arbitrary and frequently changing publishing rules on which they depend. The identifiability of central hosts, combined with the ability to coerce them through legal means to deny access to content, provides authorities with a low-cost mechanism for curtailing freedom of speech. 
 
-Recognising how easily technically motivated solutions can be put in service of propaganda, manipulation and surveillance has motivated the work of hackers for decades. The vision to enable censorship-resistant publishing has been at the forefront of the decentralisation efforts they initiated. Since  the early days of the \emph{cypherpunk movement} in the 1980s, \emph{censorship resistance} has become a foundational principle of peer-to-peer storage networks, such as Swarm \cite{swarm2021whitepaper}.
+Recognising how easily technically motivated solutions can be put in service of propaganda, manipulation and surveillance has motivated the work of hackers for decades. The vision of enabling censorship-resistant publishing has been at the forefront of the decentralisation efforts they initiated. Since  the early days of the \emph{cypherpunk movement} in the 1980s, \emph{censorship resistance} has become a foundational principle of peer-to-peer storage networks such as Swarm \cite{swarm2021whitepaper}.
 
-In the decentralised paradigm of Web3, there is, as per its founding mission, no longer a single operating entity controlling publishing platforms or hosting infrastructure. On the one hand, this renders censorship%
+In the decentralised paradigm of Web3, in accordance with its founding mission, there is no longer a single operating entity controlling publishing or hosting infrastructure. This renders \emph{censorship}%
 %
-\footnote{Censorship is understood as the act of a third party to make data unavailable. In practice, this is the case when said 'single operating entity controlling publishing platforms or hosting infrastructure' makes content inaccessible. Censorship is not the deletion of something previously posted by its original poster or uploader, which, when enabled in whatever form, does not therefore violate censorship-resistance.} 
+\footnote{Censorship is defined here as the act of rendering content inaccessible by a third party not in alignment with the original poster's intention. Deletion prompted or approved upon by their publisher  does not constitute censorship.} 
 %
-infeasibly costly, as intended. Content posted in a Web3 environment \textit{can} disappear if it is not kept up. But the data is censorship-proof in that its disappearance cannot be hastened by anyone other than the original poster. With a decentralized, immutable platform, even the poster cannot make data disappear at will though. And thus, the potentially unintended yet permanent exposure of personal data presents a serious concern for many individuals. Unless one accepts this as the  price to be paid for censorship resistence, there is a need for solutions that can restore the sense of security that centralised gatekeepers provide \cite{geambasu2009vanish}. 
+infeasibly costly, as intended. At the same time, persistence is not guaranteed: content \emph{can} disappear if it is not kept up. In decentralised immutable storage systems, however, once data is stored, its removal cannot be hastened by any party other than the original poster, and even the poster cannot make data disappear at will. This combination of censorship resistance and constrained removability means that the potentially unintended yet permanent exposure of personal data presents a serious concern for many individuals. Unless one accepts this as the  price of censorship resistance, solutions are needed that can restore the sense of security traditionally provided by centralised gatekeepers \cite{geambasu2009vanish}. 
 
-Prima facie, the intent to introduce a mechanism to delete content from \emph{immutable} platforms seems futile. However, immutability does not imply that content cannot be updated, nor that the network itself cannot change; it simply means that once data is stored, it cannot be \emph{actively} deleted.
+Prima facie, the introduction of a mechanism for deleting content from \emph{immutable} platforms may seem futile. However, immutability does not imply that the network itself cannot change; it simply means that once data is stored, it cannot be \emph{actively} deleted.
 
-To overcome this apparent paradox, we need to acknowledge that 1) the requirement of  `deletion' normally does not refer to physical destruction of offending content but to the removal of access to it; combine this with the fact that 2) data can be stored encrypted, making loss of access equivalent to `losing the key'; that 3) a deterministic random generator can be provided trustlessly  to create a key through a social process defined by a network protocol, as explained below; that 4) immutable storage environments allow for adding data; and 5) that the act of adding seemingly unrelated content can change the protocol's output, altering the key derived from the same seed. 
+Resolving this apparent paradox requires acknowledging that 1) the obligation to `delete' normally refers not to the physical destruction of offending content but to the removal of access to it; 2) data can be stored in encrypted form, losing access to the decryption key is equivalent to losing access to the content; 3) let the encryption key be created by a social process, define a network protocol with a) permissionless participation, b) deterministic operation as well as c) sufficient input entropy to act as a  random number generator; 4) immutable storage environments allow for the addition of data; and 5) the act of adding seemingly unrelated content can change the protocol's output, altering the key derived from the same seed. 
 
-Armed with these ingredients, we can arrive at a mechanism to \emph{effectively} delete data from an immutable, distributed network, and comply with both user sentiment and legal requirements; and with this, neutralise a perceived advantage of traditional, centralised data storage designs.
+Taken together, these properties enable a mechanism to \emph{effectively} delete data from an immutable distributed network while complying with both user expectations and legal requirements, thereby neutralising a perceived advantage of traditional, centralised data storage designs.
 
 \section{Deletion and revoking access}
 \label{sec:deletion}
 
-Requirements of removal of information in the sense of erasing it from all physical storage devices are both unenforceable and impractical \cite{ohm2010broken}. Even the most rigorous data protection audits do not require the erasure of offending data from backup tapes. In general, the tacit assumption is that information ordered to be removed should become \emph{inaccessible} through \emph{typical, original, and precedented methods of access}.
+Requirements of removal of information in the sense of erasing it from all physical storage devices are both unenforceable and impractical \cite{ohm2010broken}. Even the most rigorous data protection audits do not require the erasure of offending data from backup tapes. The tacit assumption is that information ordered to be removed should become \emph{inaccessible} through \emph{typical and precedented} means of access.
 
-In what follows, we formulate what we think is the strongest meaningful definition of deletion applicable to permissionless, immutable, decentralised storage systems and offer a construction that implements it.  Importantly, this approach is purely technical: it relies on the capabilities and costs of primary actors, rather than on procedural measures that impose obligations on intermediaries to respect those actors' rights. In other words, it operates completely algorithmically in a trustless, distributed network, without expecting anyone to comply either out of altruistic motive or under punitive threat.
+In what follows, we formulate what we think is the strongest meaningful definition of deletion applicable to permissionless, immutable, decentralised storage systems and offer a construction that implements it.  Importantly, this approach is purely technical: it relies on the capabilities and costs of primary actors, rather than on procedural measures that impose obligations on intermediaries to respect those actors' rights. In other words, it operates completely algorithmically in a trustless, distributed network, without assuming compliance that is incentivised through either altruistic motive or punitive threat.
 
-The primary actors in this context are users who wish to share content (the \emph{uploaders}) by granting read access to a number of data consumers (\emph{downloaders}).  Granting read access is defined as providing a canonical \emph{reference} to the content, allowing the system to retrieve the complete information intended for disclosure. Revoking access means that this canonical reference stops working.
+The primary actors in this context are users who wish to share content (\emph{uploaders}) by granting read access to data consumers (\emph{downloaders}).  Granting read access is defined as providing a canonical \emph{reference} to the content, allowing the system to retrieve the complete information intended for disclosure. Revoking access means that this canonical reference ceases to function.
 
-It is obvious that any party that is privileged to access information could store, re-code, and potentially disseminate it, so that the content can be made accessible at a later point in time, which practically bypasses any process that would qualify as deletion (or removal of access). As there is no guaranteed protection against such adversity, any legally and socially useful notion of deletion invariably defines a narrower case: taking away \emph{the viability to replay the same access method} at a lower cost than at least the full cost of storing the content.%
+Any party privileged to access information could store, re-code, and potentially disseminate it, making the content accessible at a later point in time, thereby bypassing any process that would qualify as deletion (or removal of access). Because no mechanism can  guarantee protection against such behaviour, any legally and socially useful notion of deletion must define a narrower case: taking away \emph{the viability to replay the same access method} at a lower cost than at least the full cost of storing the content.%
 %
 \footnote{That is, the total storage cost paid for the full size of the content starting from the time that access was revoked up until the attempted breach.}
 %
-At most, this could mean the full cost of storing all content and/or all change logs of the publishing system holding the specific content, since it is impossible to know in advance which piece of data may become relevant in the future.  For example, deletion on a social media platform only means that the original link no longer works; even if others may have downloaded and reposted the content elsewhere under a new link.%
+At most, this implies the full cost of storing all content and/or all change logs of the publishing system holding the specific content, since it is impossible to know in advance which piece of data may become relevant in the future.  For example, deletion on a social media platform typically means that the original link no longer works, even if others may have downloaded and reposted the content elsewhere under a new link.%
 
-Consequently, we will explore deletion as a scheme for uploading content with access revocation that meets the following criteria: 
+Consequently, we explore deletion as a scheme for uploading content with access revocation that meets the following criteria: 
 
-\begin{labelledlist}[noitemsep]
-    \item[\emph{specialisation}] The uploader is able to choose at the time of publishing a specialised construct that will enable access revocation later. From a user's perspective, content that is meant to be reliably deleted should be marked or constructed as such at the time of upload. The cost of uploading and preserving such content may be higher than the cost of regular, censorship-resistant but non-deletable content.
+\begin{labelledlist}
+    \item[\emph{specialisation}] The uploader can choose at the time of publishing a specialised construct that enables later access revocation. From a user's perspective, content intended to be reliably deleted should be marked or constructed accordingly at the time of upload. The cost of uploading and preserving such content may exceed that of regular, censorship-resistant but non-deletable content.
 
-    \item[\emph{sovereignty}] Deletables presuppose access control, i.e. they are only available to a specific set of recipients. The uploader is the unconditional owner of the deletable data and holds the exclusive means to selectively revoke access from any party that was previously granted access. In other words, the uploader's credentials are necessary to delete their own deletable content, and no one else can delete it.
+    \item[\emph{sovereignty}] Deletable content presupposes access control; it is available only to a specific set of recipients. The uploader is the unconditional owner of the deletable data and holds the exclusive means to selectively revoke access from any party previously granted it. In other words, the uploader's credentials are required to delete their deletable content, and no other party can do so.
 %
-    \item[\emph{security}] After access is revoked, a grantee is unable to access the content using the same reference or any other cue shorter than the deleted content itself. That is, unless the downloader has stored at least as much  as the size of the deleted content itself, they will have no way of retrieving it.
+    \item[\emph{security}] After access is revoked, a grantee cannot retrieve the content using the same reference or any other cue shorter than the deleted content itself. Unless the downloader has stored data at least equal in size to the deleted content itself, they will have no way of retrieving it.
 %
 \end{labelledlist}
 
-Note that in the Swarm network, uploaded content may eventually be \emph{forgotten}: if nobody pays for its storage and the content is not frequently accessed, it will be garbage-collected. However, content no longer paid for to be stored
+Note that in the Swarm network, uploaded content may eventually be \emph{forgotten}: if nobody pays for its storage and the content is not frequently accessed, it will be garbage-collected. However, content that is no longer funded%
 %
-\footnote{In the context of Swarm, chunks with \textit{expired postage stamps}.}
+\footnote{In the context of Swarm, chunks with \emph{expired postage stamps}.}
 %
-cannot be regarded as reliably deleted: the requirements of sovereignty and security are not strictly fulfilled.
+cannot be regarded as reliably deleted, as the requirements of sovereignty and security are not strictly fulfilled.
 
 
 \section{Construction}
 \label{sec:construction}
 
-The goal of this section is to arrive at a formal construction of a revocable access model for the distributed storage network Swarm. We will base our exploration on \emph{chunks}, the fundamental fixed-size storage units of Swarm's distributed storage model, DISC \cite[\S 2]{tron2025BOS}. The proposed \emph{DREAM} construct implements a deletable content storage and access model that fulfills the requirements of specialisation, sovereignty, and security.
+The goal of this section is to present a formal construction of a revocable access model for the distributed storage network Swarm. Our construction builds on \emph{chunks}, the fundamental fixed-size storage units of Swarm's distributed storage model, DISC \cite[\S 2]{tron2025BOS}. The proposed \emph{dream} construct implements a deletable content storage and access model that fulfils the requirements of specialisation, sovereignty, and security.
 
 \subsection{Synopsis}
 
-The general approach of the contribution is that access to content can be revoked by taking away the decryption key. For this to be possible, the key itself must be of volatile nature. In the proposed protocol, such a key ($k$) is constructed for the grantee by data flowing  through the network of Swarm nodes  (see figure~\ref{fig:dream-path}). Starting out as a chunk-length piece of data generated from a random seed ($g$) it is sent to its destination wrapped as a content-addressed chunk beginning its journey of transformation following a \emph{dream path}. At each step, the chunk is picked up by a storer node in the target neighbourhood, the content is modulated using local chunk data in the node's storage as input ($\Delta$ function) then once-again wrapped as a chunk, its content address determining in which neighbourhood the subsequent step will be performed. After an arbitrary but fixed number of steps ($n$), the dream path leads back to the grantee and the key $k$ is extracted and can be used to reconstruct the deletable content $C$ by decrypting its encrypted form $C'$ that is stored in the network with $k$. 
+The central idea of this contribution is that access to content can be revoked by withdrawing the decryption key. For this to be possible, the key itself must be volatile. In the proposed protocol, such a key ($k$) is constructed for the grantee from data flowing  through the network of Swarm nodes  (see figure~\ref{fig:retrieval}). Starting out as a chunk-length piece of data generated from a random seed ($g$), it is sent to its destination wrapped as a content-addressed chunk, beginning a sequence of transformations along a \emph{dream path}. At each step, the chunk is picked up by a storer node in the target neighbourhood. Its content is modulated using local chunk data from the node's storage as input ($\Delta$ function) and then wrapped again as a chunk, whose content address determines the neighbourhood in which the subsequent step is performed. After an arbitrary but fixed number of steps ($n$), the dream path leads back to the grantee, where the key $k$ is extracted and can be used to reconstruct the deletable content $C$ by decrypting its encrypted form $C'$ stored in the network. 
 
-The uploader of deletable content does not need to play this script of collective construction: critically, because each step takes input from data previously uploaded using the same \emph{postage stamp} owned by the uploader, they have all the data needed to simulate the protocol's calculations. Once the owner mines a key by finding a path, the deletable content ($C$) is encrypted, and the resulting encrypted content ($C'$) is then uploaded. To share a link to the content, the uploader shares a dream reference, a tuple $\langle r,b,g\rangle $ consisting of the Swarm reference $r$ to the encrypted content $C'$, a postage stamp batch reference to the batch ID $b$, and the generator seed $g$. The grantee retrieves the encrypted content by the Swarm reference $r$. The batch id $b$ and the generator seed $g$ enable the grantee to obtain the key from the network, triggering the path traversal to re-create the dream key $k$. The content plaintext $C$ can be obtained by decrypting $C'$ with the key $k$.  Since the key itself has the same length as the content, there is no incentive to store $\langle r,k\rangle $ as an alternative, because it would take more storage than simply storing the content $C$.
+The uploader of deletable content does not need to execute this script of collective construction: critically, because each step takes input from data previously uploaded using the same \emph{postage stamp} owned by the uploader, they possess all the data required to simulate the protocol's calculations. Once the uploader derives a key by finding a path, the deletable content ($C$) is encrypted and the resulting encrypted content ($C'$) is then uploaded. To share a link to the content, the uploader provides a dream reference, a tuple $\langle r,b,g\rangle $ consisting of the Swarm reference $r$ to the encrypted content $C'$, a postage stamp batch reference to the batch ID $b$, and the generator seed $g$. The grantee retrieves the encrypted content by the Swarm reference $r$. The batch ID $b$ and the generator seed $g$ enable the grantee to obtain the key from the network, triggering the path traversal to re-create the dream key $k$. The content plaintext $C$ is recovered by decrypting $C'$ with key $k$.  Since the key has the same length as the content, there is no incentive to store $\langle r,k\rangle $ as an alternative, and doing so would require more storage than simply storing the content $C$.
 
-Importantly, while the key to the data can be accessed through the network, it is never stored in it. This is what makes revocation possible. Since the owner of the stamp (the uploader) controls that dataset, by virtue of uploading extra data to any node's local storage, they can change the spice coming from local data (figure \ref{fig:deflected}). This is sufficient to deflect the path which renders the key inaccessible, and thus effectively delete their content from the network. 
+Importantly, while the key can be accessed through the network, it is never stored in it, which makes revocation possible. Since the owner of the postage stamp (the uploader) controls the stamped dataset, uploading additional data to any node's local storage alters the spice coming from local data (see figure~\ref{fig:deflected}). This is sufficient to deflect the path, rendering the key inaccessible and thereby effectively deleting the content from the network. 
 
 \subsection{Dream: deniable, revocable, expirable, addressable, malleable}
 
-The use of the word `dream' alludes to the counterintuitive nature of the finding that deletion is even possible in an \emph{immutable} context.  As a mnemonic acronym, it resolves to the 5 \emph{dream attributes} that the proposed construct displays:
+The term "dream' alludes to the counter-intuitive finding that deletion is even possible in an \emph{immutable} context.  As a mnemonic acronym, it resolves to the 5 \emph{dream attributes} exhibited by the proposed construct:
 
 \begin{labelledlist}
 
-    \item[\textbf{D} \emph{deniable}] The dream key constructed by the protocol is used for both encryption and decryption. Since any content chunk (in fact, any arbitrary content) could be encrypted using it, the key's association to any specific content is plausibly deniable (see section \ref{sec:security}).
+    \item[\textbf{D} \emph{deniable}] The dream key constructed by the protocol is used for both encryption and decryption. Because any content chunk — in fact, any arbitrary content — could be encrypted with it, the key's association to any specific content is plausibly deniable (see section \ref{sec:security}).
 
     \item[\textbf{R} \emph{revocable}] Access granted through dream keys is revocable. Revoking access from all parties, including oneself, is considered deletion. What is actually revoked is the ability to retrieve the key, which invalidates the reference $\langle r,b,g\rangle $ to the decrypted content.
 
-    \item[\textbf{E} \emph{expirable}] The scheme allows for one-time use in this design. By strategically limiting the Swarm postage stamp supply associated with the key for its (re-)creation, the \emph{key} can be made to only be retrievable once. 
+    \item[\textbf{E} \emph{expirable}] The scheme allows for one-time use in this design. By strategically limiting the Swarm postage stamp supply associated with the key for its (re-)creation, the \emph{key} can be made retrievable only once. 
     
     \item[\textbf{A} \emph{addressable}] Access can be granted to nodes in any \emph{neighbourhood} $h$ by mining a dream path of length $n$ such that the last chunk falls in $h$,%
 %
-    \footnote{Swarm neighbourhoods are groups of nodes which are responsible for sharing the same chunks \cite{swarm2021whitepaper}.}
+    \footnote{Swarm neighbourhoods are groups of nodes which are responsible for keeping the same chunks available\cite{swarm2021whitepaper}.}
 %
-    where only clients operating a node within a particular overlay address range are able to access the content.
+    restricting access to clients operating nodes within the specified overlay address range.
     
-    \item[\textbf{M} \emph{malleable}]   The construct is resilient to churn and dynamic changes in network size; it is reusable across independent grantees and upgradeable.
+    \item[\textbf{M} \emph{malleable}]   The construct is resilient to churn and dynamic changes in network size and can be reused across independent grantees.
 
 \end{labelledlist}
 
 The dream protocol can be built on top of Swarm's DISC%
 %
-\footnote{DISC (Distributed Immutable Storage of Chunks) is a storage solution developed by Swarm based on a modified interpretation of a Kademlia DHT (Distributed Hash Table) which has been specialized for data storage. Swarm's implementation of a DHT differs in that it stores the content in the DHT directly, rather than just storing a list of seeders who are able to serve the content. This approach allows for significantly faster and more efficient retrieval of data.}
+\footnote{DISC (Distributed Immutable Storage of Chunks) is a storage solution developed by Swarm that reinterprets a Kademlia \emph{DHT (Distributed Hash Table)} as a content-addressed storage model for preimage data. In Swarm, the DHT stores the content itself rather than a list of seeders serving it. This approach allows for significantly faster and more efficient data retrieval as well as paves the way for privacy-preserving protocol interactions.}
 %
-APIs as a pure second-layer solution. Despite its rich feature set, the scheme does not use complex cryptographic primitives, but instead leverages the interplay of various component subsystems.
+APIs as a pure second-layer solution. Despite its rich feature set, the scheme avoids complex cryptographic primitives and  instead leverages the interplay of various component subsystems.
 
  
 
 \subsection{Chunk upload in Swarm}
 
-When content is uploaded to Swarm, as per its standard operation, the local Swarm client splits the data into 4-kilobyte fragments, wraps each of them with some metadata and an address into a \emph{chunk}, and pushes them to the network using the \emph{push-sync} protocol. This protocol governs the transmission of newly entered chunks to the neighbourhood where they are to be stored. 
+When content is uploaded to Swarm, the local Swarm client splits the data into 4-kilobyte chunks, wraps each of them with metadata and an address into a \emph{chunk}, and pushes them to the network using the \emph{push-sync} protocol. This protocol governs the transmission of newly entered chunks to the neighbourhood where they are to be stored. 
 
-A Swarm chunk $c$ is an association $\langle a, c'\rangle$ of a 32-byte address $a$ and chunk content $c'$. While Swarm has other chunk types, the DREAM protocol focuses on the \emph{content-addressed chunk} (CAC). CACs assume that their content $c'$ is the chunk data $p$ of length limited to 4096 bytes prepended with associated metadata $m$. Content-addressed chunks attain their integrity by having their address deterministically derived from their content (including metadata and chunk data) with the help of a one-way uniform digest, a \emph{hash function} $\mathit{H}$.%
+A Swarm chunk $c$ is an association $\langle a, c'\rangle$ consisting of a 32-byte address $a$ and chunk content $c'$. While Swarm supports multiple chunk types, the protocol focuses on \emph{content-addressed chunks} (CACs). CACs assume that their content $c'$ comprises chunk data $p$, limited to 4096 bytes, prepended with associated metadata $m$. Content-addressed chunks attain their integrity by having their address deterministically derived from their content (including metadata and chunk data) using a one-way uniform digest, i.e., a \emph{hash function} $\mathit{H}$.%
 %
 \footnote{The BMT hash is the Keccak256 hash of  the metadata prepended to the root hash of the \emph{binary Merkle tree} with a Keccak256 base hash over 32-byte segments of the chunk data. This particular choice of $H$ does not affect the correctness of our construction.}
 %
@@ -354,9 +268,8 @@ A Swarm chunk $c$ is an association $\langle a, c'\rangle$ of a 32-byte address 
 \mathit{Address} & \defeq & \mathit{byte}\{32\}\\
 \mathit{Content} & \defeq & \mathit{Data} \times \mathit{Meta}\\
 \mathit{Chunk}&\defeq& \mathit{Address}\times \mathit{Content}\\
-% \mathit{Batch}&\defeq& \\ 
 \mathit{CAC} &:& Data \times Meta\to  \mathit{Chunk}\\
-\mathit{CAC}(p,m)&\defeq&\langle \mathit{Keccak}(m\oplus\mathit{BMT-root}(p)),m \oplus p\rangle
+\mathit{CAC}(p,m)&\defeq&\langle \mathit{Keccak}(m\oplus\mathit{BMTRoot}(p)),m \oplus p\rangle
 \end{eqnarray}
 
 We also define:
@@ -370,163 +283,161 @@ We also define:
 % %
 
 
-The delivery of a new chunk to the node where it is to be stored can be seen as a request, to which one of the nodes closest to the chunk's hash position in the DHT eventually responds with an acknowledgment of custody.
-Swarm's network protocols use \emph{forwarding Kademlia}, meaning that requests are routed to their destination through a series of hops successively relayed by the \emph{forwarding} nodes with ever increasing proximity to the target address, i.e. the chunk's address $a$. 
-The response is passed back via the same route as the original request (\emph{backwarding}) keeping the identity of the request originator private, see figure~\ref{fig:pushsync}.
+The delivery of a new chunk to its designated node can be understood as a request, to which one of the nodes closest to the chunk's hash position in the DHT eventually responds with an acknowledgment of custody. Requests in Swarm are routed through a series of hops successively relayed by nodes with progressively increasing proximity to the target address, i.e., the chunk's address $a$ (\emph{forwarding}\/). 
+The response is passed back via the same route  (\emph{backwarding}\/) preserving the privacy of the request originator (see figure~\ref{fig:pushsync}).
 
-\emph{Proximity} is the inverse of the xor distance metric \cite{maymounkov2002kademlia}, while 
-\emph{proximity order} $\mathit{PO}(x,y)$ returns the integer part of the logarithm of the xor distance, which can be calculated as the number of matching initial bits of the two addresses $x$ and $y$.%
+\emph{Proximity} is defined as the inverse of the XOR distance metric \cite{maymounkov2002kademlia}, while 
+\emph{proximity order} $\mathit{PO}(x,y)$ returns the integer part of the logarithm of the XOR distance, which can be calculated as the number of matching initial bits of the addresses $x$ and $y$.%
 %
 \footnote{As an example, the proximity order $\mathit{PO}$ of 00101100 and 00110011 is 3, because the two 8-bit integers share the prefix 001, which is three bits long. }
 %
 Both proximity and proximity order apply to the address space shared by chunks and peers and play a crucial role in Swarm's peer-to-peer routing.
-Conversely, an address range is specified by a bit sequence, which defines a \emph{neighbourhood} of chunks (reserve), or peers. Given an address $a$ and a non-negative   integer depth $d$, the shared \emph{prefix} of all addresses in the range can be specified as the initial $d$ bits of $a$, called a neighbourhood of \emph{depth $d$ designated by $a$}. In practice, `neighbourhood' refers to a cluster of nodes that are incentivised to relay as well as replicate and retain all chunks whose addresses share such prefix with the addresses of nodes in the cluster.%
+Conversely, an address range is specified by a bit sequence that defines a \emph{neighbourhood} of chunks (reserve), or peers. Given an address $a$ and a non-negative integer depth $d$, the shared \emph{prefix} of all addresses in the range can be specified as the initial $d$ bits of $a$, called a neighbourhood of \emph{depth $d$ designated by $a$}. In practice, `neighbourhood' refers to a cluster of nodes incentivised to relay, replicate, and retain all chunks whose addresses share this prefix with the nodes' addresses.%
 %
-\footnote{Due to the Kademlia connectivity, the route to the node whose address is closest to the chunk can be found using local decisions by the nodes along the path. Also, the forwarding-backwarding routing scheme makes it possible to do bandwidth accounting on a peer-to-peer basis and facilitates micropayment settlements on a repeated-dealings basis with a subset of quasi-permanent peers that is logarithmic in the size of the network.}
+\footnote{Due to Kademlia connectivity, the route to the node whose address is closest to the chunk can be determined through local decisions made by nodes along the path. The forwarding-backwarding routing scheme also enables bandwidth accounting on peer-to-peer connections and supports micropayment settlement across repeated interactions with a subset of quasi-permanent peers that is logarithmic in the size of the network.}
 
 
 \begin{figure}[htbp]
   \centering
-    \includegraphics[width=0.8\textwidth]{figs/push-sync.pdf}
-  \caption{Push-syncing. The protocol is responsible for transferring newly uploaded chunks to the neighbourhood of peers where they belong based on address proximity to the chunks' content addresses. Uploader $U$ posts a \emph{chunk} to a local peer connection  $F_0$, which forwards it to a node closer to storer $S$, etc. The protocol's request—response scheme uses the forwarding/backwarding Kademlia relay.
+    \includegraphics[width=\columnwidth]{figs/push-sync.pdf}
+  \caption{Push-syncing.  \ The protocol is responsible for transferring newly uploaded chunks to the neighbourhood of peers responsible for storing them, based on address proximity to the chunks' content addresses. Uploader $U$ posts a \emph{chunk} to a local peer connection  $F_0$, which forwards it to a node closer to storer $S$, etc. The protocol's request—response scheme follows the forwarding/backwarding Kademlia relay.
 }
   \Description[Push-Syncing]{The protocol that takes care of pushing a chunk to its destination based on its address.}
 \label{fig:pushsync}
 \end{figure}
 
-Eventually, every chunk uploaded to Swarm is push-synced and forwarded by relaying nodes toward its address, where it is stored in the nodes' \emph{reserve}. The length of the shared prefix prescribed to accept a neighbourhood as target area is called storage depth $\mathit{depth}_t$. It depends on the amount of storage space nodes must dedicate for their reserve and the overall volume uploaded to the network. The depth is incremented as the volume doubles and decremented as the volume halves.
-
-This procedure requires spam protection to prevent mass injection of random chunks into the network, which could expunge valuable chunks by triggering garbage collection on nodes that are pushed into capacity shortage. By requiring \emph{postage stamps}, Swarm imposes an upfront cost to uploads as an effective measure against such spamming. A chunk is accepted into a node's reserve only if it has a valid postage stamp attached. Revenue resulting from postage stamp purchases constitute the reward pot for the redistribution game, compensating storage nodes for data retention. 
+Eventually, every chunk uploaded to Swarm is push-synced and forwarded by relaying nodes toward its address, where it is stored in the nodes' \emph{reserve}. The length of the shared prefix prescribed to accept a neighbourhood as target area is called the storage depth $\mathit{depth}_t$ for the neighbourhood. It depends on the amount of storage space nodes must dedicate to their reserve and the overall network upload volume. The depth is incremented as the volume doubles and decremented as it halves. A chunk is accepted into a node's reserve only if it has a valid postage stamp attached. Revenue from postage stamp purchases constitutes the reward pot for the redistribution game, compensating storage nodes for data retention. 
 
 
 
 \subsection{High-level description}
 
 
-The central construct of this contribution is called the \emph{dream key} ($k$). It is a random byte sequence the size of a chunk's data ($p$), and it acts as a symmetric key (for encryption and decryption) for the deletable content $C$. Revoking access to the dream key $k$ realises the deletion of the content $C$ that was encrypted using it. The critical question we are addressing is how access could be revoked in an immutable storage network. The solution is to never store the dream key directly, but to have it collectively created by a set of nodes on demand, according to the protocol described below.\footnote{As mentioned, since the dream key is as large as the data it encrypts, there is no advantage for anyone to store it instead of the decrypted data itself.}
+The central construct of this contribution is called the \emph{dream key} ($k$). It is a random byte sequence of the same size as a chunk's data ($p$) and serves as a symmetric key for encrypting and decrypting the deletable content $C$. Revoking access to the dream key $k$ realises the deletion of the content $C$ encrypted with it. The core challenge addressed here is how access can be revoked in an immutable storage network. The solution is to avoid storing the dream key directly and instead derive it collectively on demand, according to the protocol described below.\footnote{As noted, because the dream key is as large as the data it encrypts, storing the key offers no advantage over storing the decrypted data itself.}
 
-The creation of the key starts with a chunk-sized (4096-byte) sequence $p_0$ deterministically generated from a key-sized (32-byte) seed $g$ by a pseudo-random generator function $\mathcal{G}\idx{4K}$.%
+Key construction begins with a chunk-sized (4096-byte) sequence $p_0$ deterministically generated from a key-sized (32-byte) seed $g$ by a pseudo-random generator function $\mathcal{G}\idx{4K}$.%
 %
-\footnote{For example, the Keccak sponge function used throughout Ethereum for hashing does have this capability. Alternatively, the block cipher encryption using the seed as initial nonce can be applied to a fixed constant chunk, such as all zeros.}
+\footnote{For example, the Keccak sponge function used throughout Ethereum for hashing provides this capability. Alternatively, the block cipher encryption using the seed as initial nonce may be applied to a fixed constant chunk, such as all zeros.}
 %
-The protocol then sends this first iteration stage of the key as a content-addressed chunk (CAC) $c_0 = \langle a_0, m \oplus p_0\rangle$ to the network, $m$ being metadata that helps with the key generation. As per Swarm's push-sync protocol, a node $\node_0$ in the neighbourhood designated by the chunk address $a_0$ is guaranteed to eventually receive this chunk. Now, the dream protocol prescribes that the closest node must update the key $p_0$ to $p_1$ in a specific way, using $b$ and the \emph{key update function} $\Delta$; and then, wrapped as a new chunk $c_1 =\langle a_1, m \oplus p_1\rangle$, sent it to the network again towards the neighbourhood designated by its new content address $a_1$. The next node that updates the dream chunk is considered the next node on the dream path ($\node_0\ldots\node_n$ in figure~\ref{fig:dream-path}).%
+The protocol sends this first iteration stage of the key as a content-addressed chunk (CAC) $c_0 = \langle a_0, m \oplus p_0\rangle$ to the network, where $m$ denotes metadata supporting key generation. As specified by Swarm's push-sync protocol, a node $\node_0$ in the neighbourhood designated by the chunk address $a_0$ is guaranteed to eventually receive this chunk. The dream protocol then requires the closest node to update the key from $p_0$ to $p_1$ using batch identifier $b$ and the \emph{key update function} $\Delta$. Wrapped as a new chunk $c_1 =\langle a_1, m \oplus p_1\rangle$, it is forwarded toward the neighbourhood designated by its new content address $a_1$. The node that is closest to $a_1$ performs such an update and thus becomes the next node on the dream path ($\node_0\ldots\node_n$ in figure~\ref{fig:retrieval}).%
 %
-\footnote{Note that, due to forwarding Kademlia, routing is realised by relaying the messages via multiple hops using keep-alive peer connections as the transmission channel. However, for the dream protocol, these intermediate forwarding nodes are not relevant.}
+\footnote{Note that, due to forwarding Kademlia, routing is performed by relaying messages via multiple hops using keep-alive peer connections as the transmission channel. However, for the dream protocol, these intermediate forwarding nodes are not relevant (see figure~\ref{fig:pushsync}).}
 %
 %
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.75\textwidth]{figs/dream-path-2.2.pdf}
-    \caption{Left: The path of the solid arrows represents the dream path, a series of neighbourhoods the dream protocol needs to traverse. The grantee posts the chunk data $p_0$ generated from $g$ wrapped as chunk $c_0=\langle a_0, m \oplus p_0\rangle$ no different from any other upload to Swarm. Through multiple forwarding hops, $c_0$ arrives where it would be stored according to $a_0 = \mathit{Address}(c_0)$. The dream key is created as the chunk-long piece of data journeys through the neighbourhoods designated by $\mathit{Address}(c_0),\ldots,\mathit{Address}(c_n)$, picked up by the closest nodes $\node_0 \ldots \node_n$. Eventually, at step $n+1$, $c_{n}$ is received back by grantee $G$ at address $a$ who can extract the dream key $k=\mathit{Data}(c_n)$.
-    Right: For each step $0\le i<n$ on the way node $\node_i$ updates $c_i$ using the update function $\Delta$. Information locally available to nodes specific to that neighbourhood ($\mathit{BB}_t(b,c_i)$) serves as input to the key update function ($\Delta$). 
-    The ($\emph{1.}$) incoming chunk $c_{i}$ is used to ($\emph{2.}$) find in the reserve the set $\mathit{BB}_t(b,c_i)$, i.e. those chunks that have a valid postage stamp issued under $b$ and fall into the batch bucket designated by the input chunk address $\mathit{Address}(c_i)$. These chunks' data are then XOR-ed together with the input chunk data $\mathit{Data}(c_{i})$ to create $p_{i+1}$, which is then wrapped into the chunk $c_{i+1}$ and uploaded ($\emph{3.}$).}
+    \includegraphics[width=\columnwidth]{figs/retrieval.pdf}
+    \caption{Left: The path of the solid arrows represents the dream path, a series of neighbourhoods traversed by the dream protocol. The grantee posts the chunk data $p_0$ generated from $g$ and wrapped as chunk $c_0=\langle a_0, m \oplus p_0\rangle$, indistinguishable from a standard Swarm upload. Through multiple forwarding hops, $c_0$ arrives where it would be stored according to $a_0 = \mathit{Address}(c_0)$. The dream key is created as the chunk-long piece of data journeys through the neighbourhoods designated by $\mathit{Address}(c_0),\ldots,\mathit{Address}(c_n)$, picked up by the closest nodes $\node_0 \ldots \node_n$. Eventually, at step $n+1$, $c_{n}$ is received back by grantee $G$ at address $a$ who can extract the dream key $k=\mathit{Data}(c_n)$.
+    Right: For each step $0\le i<n$ on the way, node $\node_i$ updates $c_i$ using the update function $\Delta$. Information locally available to nodes specific to that neighbourhood ($\mathit{BB}_t(b,c_i)$) serves as input to the key update function ($\Delta$). 
+    The ($\emph{1.}$) incoming chunk $c_{i}$ is used to ($\emph{2.}$) find in the reserve the set $\mathit{BB}_t(b,c_i)$, i.e. consisting of chunks with valid postage stamps issued under $b$ that fall into the batch bucket designated by the input chunk address $\mathit{Address}(c_i)$. Thee data of these chunks are then XOR-ed with the input chunk data $\mathit{Data}(c_{i})$ to create $p_{i+1}$. The result is wrapped as chunk $c_{i+1}$ and uploaded ($\emph{3.}$).}
     \Description[Dream Path]{The path that is how the network stores a dream key.}
-\label{fig:dream-path}
+\label{fig:retrieval}
 \end{figure}
 
-Every node that receives the evolving dream chunk wraps it using data from its \emph{reserve} at the time ($BB_t$) as input for $\Delta$, i.e. from the chunks that it is paid to store. If the protocol is initiated more than once, conditions may be different due to network and reserve changes. This sensitivity of conditions to time is indicated with a subscript $t$. In fact, the key invention is to use the ability of the uploader to change the reserves of a neighbourhood, to thereby derail a dream path that previously resolved.
+Every node that receives the evolving dream chunk wraps it using data from its \emph{reserve} at the time ($BB_t$) as input to $\Delta$, i.e. from the chunks that it is paid to store. If the protocol is initiated more than once, conditions may differ due to network and reserve changes. This temporal sensitivity is indicated by the subscript $t$. The key invention is to leverage the uploader's ability to modify the reserves of a neighbourhood, thereby derailing a dream path that was previously resolved.
 
-But as long as the initial key $p_0$ and the metadata $m$ are the same {and} the relevant parts of the reserve $BB$ remain unchanged, the system ends up generating the same dream key, which allows the grantee to decrypt and read the deletable content.
+As long as the initial key $p_0$ and the metadata $m$ are the same {and} the relevant parts of the reserve $BB$ remain unchanged, the system generates the same dream key, allowing the grantee to decrypt and access the deletable content.
 
-Critically, by leaving control over these conditions in the hands of the uploader, they are the only party that can actively block the grantee's ability to calculate the key.
+Critically, because control over these conditions rests with the the uploader, they are the only party able to actively prevent the grantee from re-calculating the key.
 %
 %
 \begin{figure}[htbp]
   \centering
-    \includegraphics[width=0.85\textwidth]{figs/dream-path-2.2-deflected.pdf}
-  \caption{Deletion. The dream path is shown as `deflected' by a new chunk $u$ stamped by postage batch $b$ sent by uploader $U$ ($\emph{1.}$).
-  An uploader may alter the dream path by inserting a chunk at time $t'$ into the relevant batch bucket in any step $0\le i< n$. As a result, $\mathit{BB}_{t}(b,c_i)\neq \mathit{BB}_{t''}(b,c_i)$ for all $t<t'<t''$ for at least those steps $i$ effected. This change will result in a different output chunk $c_{i+1}$ at step $i$, whereby the dream path is \emph{deflected} and will not terminate with the grantee who is now unable to retrieve the dream key to access the `deleted'  content.}
+    \includegraphics[width=\columnwidth]{figs/deflected.pdf}
+  \caption{Deletion. The dream path is shown as `deflected' by a new chunk $u$, stamped by postage batch $b$ and sent by uploader $U$ ($\emph{1.}$).
+  An uploader may alter the dream path by inserting a chunk at time $t'$ into the relevant batch bucket at any step $0\le i< n$. As a result, $\mathit{BB}_{t}(b,c_i)\neq \mathit{BB}_{t''}(b,c_i)$ for all $t<t'<t''$ for at least those steps $i$ effected. This change produces a different output chunk $c_{i+1}$ at step $i$, whereby the dream path is \emph{deflected} and will not terminate with the grantee, who is now unable to retrieve the dream key to access the `deleted'  content.}
   \Description[Update Function]{The function that describes how each node on the dream path incrementally changes the incoming dream key.}
 \label{fig:deflected}
 \end{figure}
 %
 %
-Overall, this makes retrieving a deletable chunk a process involving multiple nodes. Because calculating one part of the reference to a deletable chunk requires sorting through a set of immutable chunks controlled by the uploader, the uploader's ability to change this underlying set—by adding to it—provides the mutability to take access away (figure~\ref{fig:deflected}).
+Retrieving a deletable chunk therefore becomes a process involving multiple nodes. Because calculating part of the reference requires sorting through a set of immutable chunks controlled by the uploader, the uploader's ability to modify this underlying set — by adding data — introduces the mutability required to revoke access (see figure~\ref{fig:deflected}).
 
 \subsection{Making up the dream}
 
-The specific way that each node in the dream path wraps the chunk that will become the dream key before sending it on is described in the following (see figure \ref{fig:dream-path}). Let the 32-byte hash $b$ be the ID of a postage batch, i.e. a set of stamps, owned by uploader $U$. The node receiving a dream chunk looks $b$ up in their batchstore by the prefix extracted from the chunk metadata. We assume that this prefix will always match $b$'s ID uniquely, as long as $b$ is valid at the time $t$ of receiving the chunk. Chunks in a bucket share a prefix corresponding to the \emph{uniformity depth} $\upsilon(b)$. In order to ensure that nodes can always detect doubly signed storage slots, Swarm stipulates that neighbourhood depth must not exceed uniformity depth for the entire period that the stamp is valid:
+The specific way in which each node on the dream path wraps the chunk that becomes the dream key is described below (see figure~\ref{fig:retrieval}). Let the 32-byte hash $b$ denote the ID of a postage batch, i.e. a set of stamps, owned by uploader $U$. The node receiving a dream chunk looks up $b$ in its batch store by the prefix extracted from the chunk metadata. We assume that this prefix uniquely matches $b$'s ID, provided that $b$ remains valid at the time $t$ of receiving the chunk. Chunks in a bucket share a prefix corresponding to the \emph{uniformity depth} $\upsilon(b)$. To ensure that nodes can detect doubly signed storage slots, Swarm stipulates that neighbourhood depth must not exceed uniformity depth throughout the validity period of the stamp:
 %
 \begin{eqnarray}\label{eq:bb}
 \forall b\in\mathit{Batch}, \forall t,  b \text{ is valid at }t\rightarrow\upsilon(b)\ge \mathit{depth}_t
 \end{eqnarray}
 %
 Let $\mathit{BB}_t(b,a)$ represent the set of chunks belonging to batch $b$ at time $t$ and fall into the bucket  designated by $a$.
-Since the chunks belonging to a bucket of a batch all share a prefix longer than the prefix shared by the storer nodes in the neighbourhood, it is expected that all chunks in a batch bucket designated by $a$ are stored in the reserves of nodes in the relevant neighbourhood designated by $a$.
-It follows from equation \ref{eq:bb} that neighbourhoods' reserves must contain entire buckets:
+Because chunks within a batch bucket share a prefix longer than the prefix shared by the storer nodes in the neighbourhood, it is expected that all chunks in a batch bucket designated by $a$ are stored in the reserves of nodes in the relevant neighbourhood designated by $a$.
+From equation \ref{eq:bb} it further follows that neighbourhoods' reserves must contain entire buckets:
 %
 \begin{eqnarray}
-\forall a\in\mathit{Address}, b\in\mathit{Batch},  \forall t,  b \text{ is valid at }t\rightarrow
-\mathit{BB}_t(b,a)\subseteq\{c\mid\mathit{PO}(\node,c)\ge\mathit{depth}_t\}
+\forall a\in\mathit{Address}, b\in\mathit{Batch},  \forall t,  b \text{ is valid at }t\\
+\rightarrow\mathit{BB}_t(b,a)\subseteq\{c\mid\mathit{PO}(\node,c)\ge\mathit{depth}_t\}
 \end{eqnarray}
 %
-The \emph{key update function} $\Delta$ updates the key by bitwise XOR-ing it with each chunk data belonging to batch $b$ at block height $t$ and falling into the bucket designated by the input chunk's address.
+The \emph{key update function} $\Delta$ updates the key by bitwise XOR-ing it with each chunk data belonging to batch $b$ at block height $t$ that falls into the bucket designated by the input chunk's address:
 \begin{eqnarray}
 {\Delta}&:&
 \mathit{Batch}\times\mathit{Chunk}\to\mathit{Data}\\
 {\Delta}(b,\langle a_i,c_i\rangle)&:&\mathit{Data}(c_i)\xor\XOR_{c\in\mathit{BB}_t(b,a_i)}\mathit{Data}(c)
-% {\Delta}(b,\langle a_i,c_i\rangle)&:&\mathit{Data}(c_i)\xor\XOR_{c}^{\mathit{BB}_t(b,a_i)}\mathit{Data}(c)
-% {\Delta}(b,c_i)&:&\mathit{Data}(c_i)\xor\XOR_{c\in \mathit{BB}_t(b,\mathit{Address}(c_i))}\mathit{Data}(c)
 \end{eqnarray}
 
-If the bucket of batch $b$ designated by $a_i$ is empty, then $\Delta$ returns $\mathit{Data}(c_i)$.
-In any case, the update function is locally computable by any storer node within the neighbourhood designated by $a_i$, as it will have all required input (reserve chunks in $\mathit{BB}_t(b,a_i)$) stored.
+If the bucket of batch $b$ designated by $a_i$ is empty, $\Delta$ returns $\mathit{Data}(c_i)$.
+In any case, the update function is locally computable by any storer node within the neighbourhood designated by $a_i$, as all required inputs (reserve chunks in $\mathit{BB}_t(b,a_i)$) are stored locally.
 
 Applying the update function $\Delta$ to its own output, by the next node, we can define the \emph{dream path} $\Pi$ as follows:
 %
 \begin{eqnarray}
 \Pi&:&  \mathit{Batch}\times\mathit{Address}\to\mathit{Chunk}\{n+1\}\\
 \Pi(b,g)&\defeq&c_0,\ldots, c_n\text{ such that }\\
-c_i &\defeq&\mathit{CAC}(p,b\idx{0:8})\text{ where }
-p=\begin{cases}
+c_i &\defeq&\mathit{CAC}(p,b\idx{0:8})\text{ where } \\ 
+&& p=\begin{cases}
 \mathcal{G}\idx{4K}(g)&\text{if }i=0\\   
 {\Delta}(b,c_{i-1})&\text{otherwise}             
 \end{cases}
 \end{eqnarray}
 %
-Finally, a \emph{dream pair} $\langle g,p_n\rangle$ is a particular pairing of a seed $g$ that is the input to the generator function creating the initial key $p_0$; and the dream key $p_n$, the result of $n$ applications of the key update function.
+Finally, we define a \emph{dream pair} $\langle g,p_n\rangle$ is as a particular pairing of a seed $g$, which serves as input to the generator function creating the initial key $p_0$, and the resulting dream key $p_n$ obtained after $n$ applications of the key update function.
 
-The starting point, seed $g$, such that the dream path ends after $n$ steps in a neighbourhood $a$ of nodes that $U$ desires to be the potential exclusive receivers of the deletable chunk's payload, cannot be calculated directly. It is instead worked out by trial-and-error, or in other words, $g$ is mined. 
+The starting point, seed $g$, such that the dream path ends after $n$ steps in a neighbourhood $a$ of nodes that $U$ desires to be the potential exclusive receivers of the deletable chunk's payload, cannot be calculated directly. Instead, it is worked out by trial-and-error, or in other words, $g$ is mined. 
 
-Therefore, given a dream path of length $n$, a grantee overlay address $a$, and a batch $b$, the uploader needs to find the generator $g$ such that the last chunk of the dream path falls within $a$'s neighbourhood.
+Therefore, given a dream path of length $n$, a grantee overlay address $a$, and a batch $b$, the uploader must find a generator $g$ seed such that the final chunk of the dream path falls within $a$'s neighbourhood.
 %
 \begin{eqnarray}
-\mathit{dream}&:&\mathit{Address}\times\mathit{Batch}\times\mathbb{Z}^{+}\to\mathcal{P}(\mathit{Address}\times\mathit{Data})\\
+\mathit{dream}&:&\mathit{Address}\times\mathit{Batch}\times\mathbb{Z}^{+} \\
+&& \to\mathcal{P}(\mathit{Address}\times\mathit{Data})\\
 \mathit{dream}(a,b,n) &\subset &\mathit{Address}\times\mathit{Data}\\
 \langle g, k\rangle \in \mathit{dream}(a,b,n) 
 &\Leftrightarrow
-& k=\mathit{Data}(c_n)\land c_n=\Pi(b,g)\idx{n+1}\land\mathit{PO}(a,\mathit{Address}(c_n))\geq d
+& k=\mathit{Data}(c_n)\\
+&&\land\ c_n=\Pi(b,g)\idx{n+1}\\
+&& \land\ \mathit{PO}(a,\mathit{Address}(c_n))\geq d
 \end{eqnarray}
 %
-Since the hash function $\mathit{H}$ used in calculating $a_n=\mathit{Address}(c_n)$ is uniform, the chance of $\mathit{PO_{256}}(a,a_n)\geq d$ is 1 in $2^{d}$. As a consequence, it is feasible for the uploader to find $g$ for any sufficiently low depth $d$,  which, in turn, allows them to calculate the dream key $k$ for a dream path ending at $a$.%
+Since the hash function $\mathit{H}$ used in calculating $a_n=\mathit{Address}(c_n)$ is uniform, the probability that $\mathit{PO_{256}}(a,a_n)\geq d$ is 1 in $2^{d}$. As a consequence, for any sufficiently low depth $d$, it is feasible for the uploader to find a seed $g$ which, in turn, allows them to calculate the dream key $k$ for a dream path ending at $a$.%
 
-\subsection{The Dream Protocol}
+\subsection{The dream protocol}
  
-To calculate the dream key, grantees must rely on the network, where each recursive step $i$ of the calculation for all $0\le i\le n$ must be performed by the node closest to the input chunk's address $a_{i}$. 
+To calculate the dream key, grantees must rely on the network: each recursive step $i$ of the calculation, for all $0\le i\le n$, must be performed by the node closest to the input chunk's address $a_{i}$. 
 
-In order to guarantee the correct termination, the following criteria must be fulfilled:
+To guarantee the correct termination, the following criteria must be fulfilled:
 \begin{itemize}[noitemsep]
 \item[---] all buckets of batch $b$ designated by $a_i$ for all $0\le i< n$ must be non-empty,
-\item[---] the length of the prefix shared by the addresses of chunks in the same bucket must be greater than the storage depth $d$ of the network,
-\item[---] the chunk $c_{i}$ of each step $0\le i\le n$ must be sent to the neighbourhood designated by  $a_{i}=\mathit{Address}(c_{i})$,
-\item[---] nodes at each step $0\le i<n$ of the dream path must both compute the key update and push the output key as a chunk to the network.
+\item[---] the length of the prefix shared by the addresses of chunks in the same bucket must exceed the storage depth $d$ of the network,
+\item[---] the chunk $c_{i}$ of each step $0\le i\le n$ must be forwarded to the neighbourhood designated by  $a_{i}=\mathit{Address}(c_{i})$,
+\item[---] nodes at each step $0\le i<n$ of the dream path must compute the key update and push the output key as a chunk to the network.
 \end{itemize}
 
 
-% \begin{figure}[htbp]
-%   \centering
-%     \includegraphics[width=0.6\textwidth]{figs/dream-protocol-1.16.pdf}
-%   \caption{The dream protocol. Assuming uploader $U$ mined a \textit{dream pair} $\langle g,k\rangle$ of length $n$ for grantee at overlay $a$ and nodes in the network listen to \emph{dream chunks}, content-addressed chunks whose metadata $\beta$ is a prefix of a valid batch ID $b$. Once they receive dream chunk $c_{i}$, and also look up $b$ using prefix $\beta$, they then find the chunks that are stamped with $b$, fall into the bucket  of the input chunk address $a_{i}$. The updated key output $k_{i+1}=\Delta(b,c_i)$ is then wrapped together with $\beta$ as a content-addressed chunk $c_{i+1}=\mathit{CAC}(k_{i+1},\beta)$ and uploaded to the network to end up in the neighbourhood designated by $\mathit{Address}(c_i)$ as the next step on the dream path. The node that is closest to $\mathit{Address}(c_i)$  then calculates the next step based on this input. If the protocol is followed up to $n$ steps, then the target node at address $a$ receives $c_{n}$ from which it can extract $k=\mathit{Data}(c_{n})$.}
-%   \Description[Dream Protocol]{The protocol requires a series of incentivised, local computation and must produce a chunk-sized encryption key.}
-% \label{fig:protocol}
-% \end{figure}
+We define the dream network protocol as follows: Assume that uploader $U$ has mined a \textit{dream pair} $\langle g,k\rangle$ of length $n$ for a grantee at overlay address $a$, and that nodes in the network listen for \emph{dream chunks}, i.e. content-addressed chunks whose metadata $\beta$ is a prefix of a valid batch ID $b$. Upon receiving a dream chunk $c_{i}$, a node extracts the prefix $\beta$, looks up the corresponding batch $b$, and retrieves the chunks stamped with $b$ that fall into the bucket of the input chunk address $a_{i}$. The updated key output $k_{i+1}=\Delta(b,c_i)$ is then wrapped together with $\beta$ as a content-addressed chunk $c_{i+1}=\mathit{CAC}(k_{i+1},\beta)$ and uploaded to the network to end up in the neighbourhood designated by $a_{i+1}=\mathit{Address}(c_{i+1})$, constituting the next step on the dream path. The node closest to $a_{i+1}$  then calculates the next step based on this input. If the protocol is followed up to $n$ steps,  the target node at address $a$ receives $c_{n}$, from which it can extract $k=\mathit{Data}(c_{n})$.
 
+The deletable chunk is constructed as follows: if uploader $U$ wishes to grant downloader $D$ (at overlay address~$a$) revocable access to chunk content $C$, then $U$ selects a postage batch $b$ that it owns and that is \emph{not fully utilised}.
+By trying random seeds $g$, $U$ mines a dream pair $\langle g, k\rangle\in\mathit{dream}(a,b,n)$,
+calculates the ciphertext $C'=C \xor k$, and uploads it to Swarm, obtaining the parity reference $r=\mathit{H}(C')$. The uploader then constructs the \emph{dream chunk reference} $\mathit{ref}(C)=\langle r,b,g \rangle $, which must be privately shared with grantee $D$.
 
-We define the dream network protocol as follows: Assuming uploader $U$ mined a \textit{dream pair} $\langle g,k\rangle$ of length $n$ for grantee at overlay $a$ and nodes in the network listen to \emph{dream chunks}, content-addressed chunks whose metadata $\beta$ is a prefix of a valid batch ID $b$. Once they receive dream chunk $c_{i}$, and also look up $b$ using prefix $\beta$, they then find the chunks that are stamped with $b$, fall into the bucket  of the input chunk address $a_{i}$. The updated key output $k_{i+1}=\Delta(b,c_i)$ is then wrapped together with $\beta$ as a content-addressed chunk $c_{i+1}=\mathit{CAC}(k_{i+1},\beta)$ and uploaded to the network to end up in the neighbourhood designated by $a_{i+1}=\mathit{Address}(c_{i+1})$ as the next step on the dream path. The node that is closest to $a_{i+1}$  then calculates the next step based on this input. If the protocol is followed up to $n$ steps, then the target node at address $a$ receives $c_{n}$ from which it can extract $k=\mathit{Data}(c_{n})$.
+\subsection{Multi-chunk content}
 
-The deletable dream chunk is constructed as follows: if uploader $U$ wishes to grant downloader $D$ (at overlay address $a$) revocable access to  chunk content $C$, then $U$ chooses a postage batch $b$ that it owns, and that is \emph{not completely filled}.
-$U$ then by trying random seeds $g$, mines a dream pair $\langle g, k\rangle\in\mathit{dream}(a,b,n)$,
-calculates the ciphertext $C'=C \xor k$ and uploads it to Swarm, obtaining the parity reference $r=\mathit{H}(C')$. Now $U$ creates the \emph{dream chunk reference} $\mathit{ref}(C)=\langle r,b ,g\rangle $, which must be privately shared with grantee $D$.
+Swarm DISC stores files longer than 4K in a hierarchy of chunks. Arguably, revoking access to the root chunk of a longer file makes any file practically unreachable, similar to a directory failure of a hard disk, and this may suffice under a more lenient interpretation of removing access. However, a dedicated malicious actor could demonstrate that data remains accessible by reverse-engineering DISC and using the retained decrypted root chunk as a reference to the deleted content.
+
+The same caveat applies to the approach of using the dream pad as a seed for a symmetric key cypher seeding a random number generator, such as $\mathcal{G}$, that creates individual one-time-pads for each chunk in which DISC stores the data. The resulting keystream would inherit the revocability of the key. However, the possibility of storing the dream key itself to seed the keystream at a later time to access the deletable data would undermine the principle that a working reference to the content must not be retainable in a way that requires less space than the content itself, which is an essential component of our definition of deletion. Accordingly, the key must be at least as large as the content, and no smaller intermediate seed may be retained.
+
+To achieve this notion of deletion — including the ability to target a specific neighbourhood $h$ while respecting the single-use limitation of one-time-pad encryption — each chunk of multi-chunk content must be encoded separately, by necessity using its own dream key. This collection of keys can be stored in one or more seed chunks. In this way, retention of access cannot be achieved by storing less data than the content, as each seed can be independently incapacitated by diverting their dream path. The effort required to divert these paths can remain the same as that needed for a single key by mining all individual pads for the same path.
+
 
 \section{Analysis}
 \label{sec:analysis}
@@ -535,91 +446,93 @@ calculates the ciphertext $C'=C \xor k$ and uploads it to Swarm, obtaining the p
 % \label{def:retrieval}
 Downloader $D$, in possession of a dream chunk reference $\mathit{ref}(C)=\langle r,b,g\rangle $ calculated by $U$, constructs $p_0=\mathcal{G}\idx{4K}(g)$, wraps it as the initial chunk $c_0=\mathit{CAC}(p_0,b\idx{0:8})$, and uploads it to Swarm. If and when $D$ receives the dream chunk $c$ back, it extracts the dream key as the chunk payload $k=\mathit{Data}(c)$.
 
-$D$ retrieves the parity data $C'$ using reference $r$, and then decodes the plaintext as $C=C'\xor k$.
+$D$ retrieves the parity data $C'$ using reference $r$, and then decodes the plaintext as $C=C'\xor k$ (see figure~\ref{fig:retrieval}).
 The retrieval process is trivially correct as long as: 
 \begin{enumerate}[noitemsep]
-\item The parity data $C'$ is retrievable using standard retrieval methods.
-\item The dream protocol is followed by all cooperating nodes.
+\item The parity data $C'$ is retrievable using standard methods.
+\item The dream protocol is followed by all participating nodes.
 \item The contents of the batch buckets along the dream path all remain unchanged. 
 \end{enumerate}
 
-% \subsection{Deletion}
-% \label{def:deletion}
+We now turn to access revocation, i.e. deleting content by rendering it inaccessible. 
 
-We are now turning to access revocation, i.e. deleting content by making it inaccessible. 
-
-Uploader $U$ had granted downloader $D$ at address $a$ access to content $C$ through the dream reference $\langle r,b,g\rangle $. $U$ revokes $D$'s access by uploading extra chunks to the buckets batch $b$  designated by the input chunk address ($\mathit{Address}(c_i)\text{ for }0\le i\le n$). 
-As a result, downloader $D$ will no longer be able to retrieve content $C$. Because the output of the key update function has changed, the subsequent chunk changes and the dream path is diverted. Since we cannot know which nodes are colluding and malicious, the uploader needs to upload batch bucket changes to all neighbourhoods on the dream path to reliably revoke access.
-%
-% \subsection{Incentives}
-
-% Discuss the reliability of the protocol in the context of economic incentives.
-% \begin{figure}[htbp]
-%   \centering
-%     \includegraphics[width=0.8\textwidth]{figs/push-payment.pdf}
-%   \caption{Incentives for push syncing.}
-% \label{fig:push-payment}
-% \end{figure}
-
-
-
-% How to determine when to forward.
-% discuss the cost of a dream
+Uploader $U$ had granted downloader $D$ at address $a$ access to content $C$ through the dream reference $\langle r,b,g\rangle $. $U$ revokes $D$'s access by uploading extra chunks to the batch buckets $b$  designated by the input chunk address ($\mathit{Address}(c_i)\text{ for }0\le i\le n$). 
+As a result, downloader $D$ can no longer retrieve content $C$. Because the output of the key update function has changed, the subsequent chunk changes and the dream path is diverted. Since the set of colluding and malicious nodes cannot be known in advance, the uploader must upload batch bucket changes to all neighbourhoods on the dream path to reliably revoke access (see figure~\ref{fig:deflected}).
 
 
 \section{Security}
 \label{sec:security}
 
-The reference to a dream chunk \textit{does not leak} any information about the step-count or the neighbourhoods involved. Neither are the participants in the protocol aware of their position within the dream path, nor of any details about the other neighbourhoods that are part of it, except for the immediate next one to which they are push-syncing their chunk.
+The reference to a dream chunk \textit{does not leak} information about the step-count or the neighbourhoods involved. Neither are the participants in the protocol aware of their position within the dream path, nor of any details regarding other neighbourhoods that are part of it, except for the immediate next one to which they are push-syncing their chunk.
 
-The construction of the dream reference is safely \emph{deniable} as long as no adversary gets hold of the actual encrypted chunk of $C'$: if we consider our sensitive content $C$, and any uncontroversial chunk content $A$, then when creating $C'$, the owner also encrypts $A'=A\xor k$ and uploads it. When asked about $k$, producing $A'$ makes the denial of other content, including $C'$, more plausible. For a scenario where it cannot be assumed that no adversary can get hold of $C'$, both $C$ and $A$ can be asymmetrically encrypted with a public key of the grantee before being encrypted with $k$, to prevent patterns showing in $A'\xor C'$ that can help breaking the symmetric encryption and thus prevent successful deletion.%
+As Swarm is a decentralised network, individual participants cannot (and should not) be assumed to play by the rules. Built-in incentive mechanisms encourage compliant behaviour and help maintain a Nash equilibrium. To prevent a single corrupt node in a neighbourhood from keeping deleted chunks accessible, the mechanism for deletion — namely, the strategic update to the relevant bucket — should be applied to every neighbourhood along a dream path. A sufficient condition for content deletion is then that in \emph{at least one neighbourhood} all nodes are honest, i.e. will not store and serve content that should no longer be accessible.% 
 %
-\footnote{An adversary possessing both A' and C' could calculate $A'\xor C'$ to find patterns in the result.}
-
-As Swarm is a decentralised network, individual participants cannot (and should not) be trusted to play by the rules. The built-in incentives are what encourage cooperative behaviour and help maintain a Nash equilibrium. To avoid the situation that a single corrupt node in a neighbourhood could keep deleted chunks accessible, the mechanism for deletion, i.e. the strategic update to the relevant bucket, should be applied to every neighbourhood of a dream path. A sufficient condition for content deletion is then that in \emph{at least one neighbourhood} all nodes are honest, i.e. will not store and serve information that they should not.% 
-%
-\footnote{With the growth of the Swarm network, the number of neighbourhoods increases whereas the membership size per neighbourhoods remains about the same. Thus, the costs of attacking the proposed protocol increases with network size.}
+\footnote{As the Swarm network grows, the number of neighbourhoods increases whereas the membership size per neighbourhoods remains approximately constant. Consequently, the cost of attacking the proposed protocol increases with network size.}
 %
 
-Alternatively, a powerful adversary could potentially infiltrate every neighbourhood of Swarm and archive all information that has ever been uploaded (without being able to decipher it). It could also keep logs of what was uploaded in what order, which would allow it to serve `deleted' content. However, there is a huge cost associated with such indiscriminate archiving of all of Swarm's content, in what is the only way to reliably defeat the dream construction. Because the store would also contain all downloads, it is equivalent to the scenario where an adversary makes deletion redundant by keeping all downloaded data, which is a case not commonly interpreted as defeating deletion.
+Alternatively, a powerful adversary could potentially infiltrate every neighbourhood of Swarm and archive all uploaded content (without being able to decipher it). Such an adversary could also keep logs of upload order, which would allow it to serve `deleted' content. However, indiscriminate archival of the entire network incurs substantial cost and represents the only reliable strategy for defeating the dream construction. Because the store would also contain all downloads, this scenario is equivalent to an adversary making deletion redundant by preserving all downloaded data, which is not commonly interpreted as defeating deletion.
 
 
-% \subsection{Step Count}
-% \label{def:step-count}
+\subsection{Distributed infiltration}
 
-We now turn to the discussion of how to calibrate the step count in relation to the security model using the notion of a \emph{network-wide neighbourhood infiltration rate}. For instance, a rate of $\frac{1}{2}$ means that the chance of infiltration, in any neighbourhood independently and uniformly across the network, is 1 in 2, implying that, on average, we can expect half of the neighbourhoods in the network to contain a malicious and colluding node. 
+We now consider how to calibrate the step count in relation to the security model using the notion of a \emph{network-wide neighbourhood infiltration rate}. For example, a rate of $\frac{1}{2}$ implies that the probability of infiltration in any neighbourhood — independently and uniformly across the network — is 1 in 2, meaning that, on average, half of the neighbourhoods contain at least one malicious and colluding node. 
 
-For access to be safely revoked, the owner uploads new chunks in each neighbourhood along the dream path. In practice, the malicious node operators would not be able to tell which chunks are strategic updates to facilitate deletion. But we will assume for the sake of the argument that malicious nodes are able and willing to disregard these new chunks and, in an attempt to render the revocation of access impotent, respond to a request the same as before. If every neighbourhood on the path contains at least one malicious node, it is, in principle, possible for the dream protocol to return the unchanged response, and access is granted against the intention of the uploader, i.e. the protocol terminates allowing access even though it was revoked. Given a specific dream path, however, if even a single neighbourhood on the dream path is honest, they will respect the chunks that newly arrived since the construction and therefore, divert the dream path, preventing it from terminating with the grantee.
+To safely revoke access, the owner uploads new chunks to each neighbourhood along the dream path. In practice, malicious node operators would not be able to distinguish these chunks from ordinary uploads. However, we adopt a conservative threat model and assume that malicious nodes can identify such updates and deliberately disregard them, responding to requests as if no revocation had occurred. If every neighbourhood on the path contains at least one malicious node, the dream protocol could, in principle, return an unchanged response, thereby granting access contrary to the uploader's intent. Conversely, if even a single neighbourhood on the path behaves honestly, its nodes will incorporate the newly introduced chunks and divert the dream path, preventing it from terminating at the grantee.
 
-Thus, for a breach of access to happen, all neighbourhoods must be malicious.\footnote{This is a necessary condition, but not a sufficient one: even a malicious neighbourhood could act honestly, if the route happens to pass through one of its honest nodes. This further, significant improvement of the odds that deletion succeeds is for simplicity ignored in the following. }
-In our security model, a neighbourhood is malicious with uniform and independent probability.  For an overall infiltration rate of 1 out of $k$, the chance of all neighbourhoods on a given random dream path being malicious is $k^{-n}$. For a security requirement of a success rate of $\sigma$ "nines", i.e. for an error rate less than $10^{-\sigma}$, we can formulate the requirement as
+Accordingly, a breach of access requires all neighbourhoods on the path to be malicious.\footnote{This is a necessary condition, but not a sufficient one: even a malicious neighbourhood could act honestly if the route happens to pass through one of its honest nodes. This further improves the probability that deletion succeeds; however, for simplicity, this effect is ignored in the analysis that follows. }
+In our security model, a neighbourhood is malicious with uniform and independent probability. For an overall infiltration rate of 1 out of $k$, the probability that all neighbourhoods on a dream path of length $n$ are malicious is $k^{-n}$. For a security requirement of a success rate of $\sigma$ "nines", i.e. for an error rate below $10^{-\sigma}$, we can formulate the requirement as
 \begin{equation}
 k^{-n}\leq10^{-\sigma}
 \end{equation}
-Now, expressing $k$ as a power of 10, $k=10^\kappa$, taking the logarithm of both sides and multiplying by $-1$, we get
+Expressing $k$ as a power of 10, $k=10^\kappa$, taking the logarithm of both sides and multiplying by $-1$, we get
 \begin{equation}
     n \geq \frac{\sigma}{\kappa}
 \end{equation}
-As an example, with one in every 10 neighbourhoods being malicious ($\kappa=1$), we calibrate $n\geq\sigma$: the dream path must be as long as the number of nines expressing the desired success rate.%
+As an example, with 1 in every 10 neighbourhoods being malicious ($\kappa=1$), we calibrate $n\geq\sigma$: the dream path must be as long as the number of nines expressing the desired success rate.%
 %
-\footnote{a 6-hop-long path will guarantee access revocation with a certainty of $99.9999\%$.}
+\footnote{a 6-hop-long path will yield a revocation success probability of $99.9999\%$.}
 
-\section{Implementation Constraints}\label{sec:constraints}
+\subsection{Correlated infiltration}
 
-Dream can be implemented on the existing Swarm network with only minor additions and modifications to the DISC protocol, its proven data storage mechanism. Because the dream protocol is simple and strategically utilises the DISC primitives, the effort required to implement it on Swarm would be modest.
+The analysis relies on the assumption of independent and identically distributed infiltration. These conditions also represent the most favourable scenario for a coordinated attacker seeking to exploit interactions between nodes. However, collusion alone does not increase the probability of a successful attack. Concentrating attacking resources may improve the likelihood of subverting individual neighbourhoods but does not enable the sustained corruption required to maintain or divert a dream path.
 
-Beyond its technical capacity, the size, speed, proven availability and maturity of the Swarm network\footnote{See the Swarm dashboard at \url{https://network.ethswarm.org/} and the monitoring tool called Swarm Scan at \url{https://swarmscan.io/}} also make it suitable to serve as the underlying layer for the dream protocol. At a size of almost 10,000 nodes and a global spread across four continents, the network is large and distributed enough to provide the maze of nodes needed to make dream key creation and retrieval secure, and re-creation after intended deletion practically impossible. 
+Because node operators can choose neighbourhoods%
+%
+\footnote{ In Swarm, nodes may  choose neighbourhoods to support economic rebalancing toward less populated neighbourhoods. This mechanism increases data resilience through replication and improves node operators' revenue distribution. }, 
+%
+specific neighbourhoods may be directly targeted and subverted to become majority dishonest. Such overcrowding could incentivise honest nodes to leave the attacked neighbourhood, rendering it reliably dishonest. This risk underscores the importance of dream path unpredictability. Path selection remains unpredictable due to the uploader's free choice of seed and the unpredictability of the results of the delta function, which is derived from a uniform hash algorithm. The uploader's mining process is not observable, and the uploader can selectively choose individual paths through the network, thereby avoiding suspicious neighbourhoods — for example, those exhibiting anomalous node volatility. Further, because a dream pad can be created without interacting with the network, by simulating the protocol during the mining process, meaningful pre-coordination of an attack becomes nearly impossible: a path cannot be predicted before the key is revealed. After it is revealed, an attacker could attempt to corrupt the involved neighbourhoods only if they were able to observe all of them while creating the key. This requirement is operationally infeasible and borders the effort required to control the entire network for the sake of keeping a piece of information undeletable.
 
-The reference used by the grantees to retrieve content is more complex then Swarm's standard reference. Analogous to the way encryption is handled, the length of the reference allows to identify the referenced content as deletable.
+Clustering corrupt nodes into neighbourhoods further reduces an attacker's probability of maintaining a viable key. The attacker's optimal strategy — controlling all nodes selected to process hops along a dream path — would by necessity require a large number of controlled nodes when entire neighbourhoods are subverted, as nodes within the same neighbourhood become redundant. Only one node per neighbourhood can actively participate in the dream path.
+
+\subsection{Deniability}
+
+Deniability is relevant in scenarios where an adversary could coerce disclosure of $C$ out-of-band based on the presumption that a key $k$ must currently be, or must previously have been, a handle to some content. It may be desirable for deniability to hold even after $C$ or $C'$ have been revealed.
+
+The construction of the dream reference remains plausibly \emph{deniable} as long as an adversary does not obtain the encrypted chunk $C'$. Consider our sensitive content $C$, and any uncontroversial chunk content $A$. When creating $C'$, the owner also encrypts $A'=A\xor k$ and uploads it. When asked about $k$, producing $A'$ makes the denial of other content — including $C'$ — more plausible. 
+
+However, a network observer may have visibility into all stored data, including both $A'$ and $C'$. From $A'\xor C'$, such an observer could derive information about $k$ due to the vulnerability of XOR encryption to reveal patterns when applied to familiar payloads. To mitigate this risk, $A'$ should be stored in asymmetrically encrypted form as $A''$, allowing the uploader to reveal the decrypted $A'$ when necessary to support deniability. If the denial is to the adversary, who may come into possession of $A'$ in the process, then $C'$ must also be asymmetrically encrypted and stored as $C''$ to retain deniability. Retrieval then proceeds by obtaining $C''$ by the $r$ of $\langle r,b,g \rangle$, deriving $k$ using $b$ and $g$, decrypting $C''$ with the asymmetric private key, and finally decrypting $C'$ with $k$ to obtain $C$. Applying asymmetrical encryption to both $C$ and $A$ prior to dream pad encryption prevents patterns from appearing in $A'\xor C'$. This reduces the risk of compromising the symmetric protection provided  by the dream pad, thereby preserving both deletion guarantees and deniability. Accordingly, asymmetric inner encryption of content $C$ can be introduced to strengthen deniability.%
+%
+\footnote{An adversary possessing both A' and C' could calculate $A'\xor C'$ to find patterns in the result. However, these patterns are conditioned on the underlying data being clear text that reveals spaces, vowels, consonants or punctuation in a particular distribution. Without such patterns, in the case that the underlying data is uniformly distributed 'noise' as results from asymmetric encryption, these patterns are not discernable and cannot help break the pad. }
+
+After verifying the security of the dream protocol, we further discuss its
+practical implementation constraints to clarify the conditions for real-world deployment
+
+\section{Implementation constraints}\label{sec:constraints}
+
+Dream can be implemented on the existing Swarm network with only minor additions and modifications to the DISC protocol, its proven data storage mechanism. Because the dream protocol is simple and relies solely on DISC primitives, the implementation is expected to be modest.
+
+In addition to its technical capabilities, the size, performance, availability, and maturity of the Swarm network\footnote{See the Swarm dashboard at \url{https://network.ethswarm.org/} and the monitoring tool called Swarm Scan at \url{https://swarmscan.io/}.}  make it suitable as the underlying layer for the dream protocol. With nearly 10,000 nodes and a global spread across four continents, the network is sufficiently large and distributed to provide the maze of nodes required for secure dream key creation and retrieval, while making re-computation after intentional deleted content economically impractical. 
+
+The reference used by grantees to retrieve content is more complex than Swarm's standard reference. Analogous to the way encryption is handled, the length of the reference enables the system to identify the referenced content as deletable.
 
 \section{Conclusion}\label{sec:conclusion}
-Based on the concept of revocable access, this paper presents a technically novel yet practical mechanism to achieve deletable content in the immutable context of peer-to-peer storage. By formalising deletion as the loss of access rather than the physical erasure of data, the dream construct offers a secure, permissionless, and self-sovereign solution. The system is designed to integrate seamlessly with Swarm’s DISC storage model and relies on simple yet robust protocol interactions among peer nodes. Through the introduction of a distributed key and a network-driven computation model, dream enables users to selectively revoke access to content without undermining the foundational principles of decentralisation, immutability, and censorship resistance. The result is a useful balance between data permanence and sovereign control, which offers a much-needed, viable approach to privacy-conscious publishing in the Web3 era.
+Based on the concept of revocable access, this paper presents a technically novel yet practical mechanism for enabling deletable content within the immutable context of peer-to-peer storage. By formalising deletion as loss of access rather than physical data erasure, the dream construct offers a secure, permissionless, and self-sovereign solution. The system integrates seamlessly with Swarm’s DISC storage model and relies on simple protocol interactions to allow users to selectively revoke access to content while preserving the foundational principles of decentralisation, immutability, and censorship resistance. The result is a framework that reconciles data permanence with sovereign control, which offers a much-needed, viable approach to privacy-conscious publishing in Web3 environments.
 
 
-The ability to delete data from immutable storage marks an essential contribution towards maturity for decentralised storage technology. It adds a feature that centralised, mutable systems so far seemed to have as a permanent advantage over the alternatives. Once established as a standard mode of storage, this can reduce regulatory friction and empower users. It could enable a new class of applications to utilise decentralised storage, which depend on compliance to be able to operate; and it caters to privacy-conscious users who wish stronger control over the data they share.
-While DREAM realises a subset of the `right to be forgotten.' The fact that Swarm resists censorship while enabling deletion points to a promising middle ground as a potential direction for regulators of commercial data hubs.
+The ability to delete data from immutable storage represents a meaningful step toward the maturation of decentralised storage technologies. It introduces a capability that has traditionally been regarded as a permanent advantage of centralised, mutable systems. Once established as a standard mode of storage, such mechanisms can reduce regulatory friction and broaden the range of applications able to rely on decentralised infrastructure, particularly those requiring compliance. They may also benefit privacy-conscious users seeking stronger control over the data they share.
+While the dream protocol addresses only subset of the `right to be forgotten', the fact that Swarm resists censorship while enabling deletion points to a promising middle ground for the governance of commercial data systems.
 
-The way that DREAM uses Swarm's network topology to `store' a key–and the fact that a simple upload can change the conditions to effectively revoke access—may serve as an inspiration to rethink other seemingly intractable problems of web3.
+More broadly, the use of network topology to derive rather than store cryptographic keys — together with the observation that targeted uploads can modify the conditions required for access — may serve as an inspiration to rethink how seemingly intractable constraints of Web3 architectures may be reframed through protocol design.
 
 %%
 %% The acknowledgments section is defined using the "acks" environment
@@ -633,6 +546,7 @@ The authors would like to thank György Barabás, Andrea Robert for help with te
 %%
 %% The next two lines define the bibliography style to be used, and
 %% the bibliography file.
+\newpage
 \bibliographystyle{ACM-Reference-Format}
 \bibliography{refs}
 

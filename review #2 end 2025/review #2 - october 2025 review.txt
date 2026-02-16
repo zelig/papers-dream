@@ -1,0 +1,167 @@
+From: Transactions on the Web <onbehalfof@manuscriptcentral.com>
+Date: Fri, 31 Oct 2025, 01:33
+Subject: Transactions on the Web - Decision on Manuscript ID TWEB-25-0111.R1
+To: <viktor.tron@gmail.com>
+Cc: <tweb@acm.org>, <viktor.tron@gmail.com>, <hd@lexon.org>
+
+
+31-Oct-2025
+
+Dear Mr. Tron:
+
+Manuscript ID TWEB-25-0111.R1 entitled "A Dream Come True: Deletable Content in Immutable Storage." which you submitted to the ACM Transactions on the Web (TWEB), has been reviewed.  The comments of the reviewer(s) are included at the bottom of this letter.
+
+The reviews are good.  We would thus like to accept your paper provided that you revise it to address feedback from the reviewers.  We believe that the revisions required are minor.
+
+Please address the comments below in your revised version and create a file or note indicating how you have addressed them.   When you resubmit your paper, the Manuscript Central paper submission system will give you instructions for uploading this information.  In your revised version, use the ACM format for your paper described at:https://www.acm.org/publications/authors/submissions
+
+To submit your revised manuscript, log into https://mc.manuscriptcentral.com/tweb and enter your Author Center, where you will find your manuscript title listed under "Manuscripts with Decisions."  Under "Actions," click on "Create a Revision."  Your manuscript number has been appended to denote a revision.
+
+Once the revised manuscript is prepared, you can upload it and submit it through your Author Center.
+
+IMPORTANT:  Your original files are available to you when you upload your revised manuscript.  Please delete any redundant files before completing the submission.
+
+Would you be able to submit your revised version within 3 months?  Please confirm by responding to tweb@acm.org
+
+Once again, thank you for submitting your manuscript to ACM TWEB.  We look forward to receiving your revision.
+
+Sincerely,
+Dr. Ryen White
+Editor-in-Chief, Transactions on the Web
+
+
+Associate Editor's Comments to Author:
+
+Associate Editor: Guest Editors, Advanced Technologies in the Decentraliz
+Comments to the Author:
+Please further revise to address reviewers' comments
+
+
+
+
+Reviewer(s)' Comments to Author:
+
+Reviewer: 1
+
+Recommendation: Accept subject to minor revisions
+
+Comments:
+The shift from "Security analysis" (Section 5) to "Implementation Constraints" (Section 6) is somewhat abrupt. Add a 1-sentence transition, e.g., "After verifying the security of the DREAM protocol, we further discuss its practical implementation constraints to clarify the conditions for real-world deployment". This ensures a smoother logical flow between chapters.
+
+
+Check all sections to confirm the spelling of "decentralized". The manuscript currently uses both "decentralised" (British English) and "decentralized" (American English) in different parts. Select one consistent spelling (either British or American) and apply it uniformly to avoid terminology confusion for readers.
+
+Additional Questions:
+Is the paper in the expected journal style?: Yes
+
+If not, please note what key sections or components are missing (abstract, related work, evaluation, references, etc).:
+
+Are the references comprehensive and appropriate?: Yes
+
+If key references are missing, please list them. If there are too many self-citations, please suggest alternatives.:
+
+Relative to the subject material, is the paper understandable without requiring too much effort on the part of the reader?: Yes
+
+Please rate the relevance of the paper to TWEB from 1 to 5, 1 being the lowest/poorest score.: 4
+
+Is there enough new content in this paper to distinguish it from other works?
+
+In answering this question, you can use the Manuscript Central capabilities for external searches on both the authors and title as well as the "Search for a Companion Paper" feature.  If significant parts of the paper have been previously published, authors are supposed to indicate this with their submission.  Unfortunately, not all authors do this.: Yes
+
+If the paper is an extended version of a conference paper, does the submission provide enough new material for journal publication?: Yes
+
+If the answer to either of these questions is no, please explain.:
+
+Manuscripts submitted to TWEB should not be concurrently under review for publication in another conference or journal.  If you suspect that the same paper is simultaneously being considered for publication elsewhere, the editor should be notified.:
+
+Is the work primarily theoretical, practical or is it a survey?: T
+
+Is the content technically sound?: Yes
+
+Please explain if not or if you are unsure.:
+
+Rate the level of originality and innovation of the work reported from 1 to 5, 1 being the lowest/poorest score.: 4
+
+Describe how the submission advances the state of the art in the field.:
+
+Rate the impact of this work on the research community, 1 being the lowest/poorest score.: 4
+
+Suggest beneficiaries from the work.:
+
+Rate the impact of this work on the wider community, 1 being the lowest/poorest score.: 4
+
+Suggest beneficiaries from the work.:
+
+Please help ACM create a more efficient time-to-publication process: Using your best judgment, what amount of copy editing do you think this paper needs?: Light
+
+Most ACM journal papers are researcher-oriented. Is this paper of potential interest to developers and engineers?: Maybe
+
+
+Reviewer: 2
+
+Recommendation: Accept subject to minor revisions
+
+Comments:
+Required clarifications before acceptance (minor, but important):
+
+Threat model & independence assumption.
+The analysis relies on (near) IID neighborhood infiltration. Please (i) state the applicability limits; (ii) discuss correlated/Sybil/Eclipse/coalition infiltration; (iii) offer a conservative bound or back-of-the-envelope calibration when infiltration events are correlated; and (iv) mention simple mitigations (multi-path derivation, randomized prefix depth/step, batched mixing).
+
+Multi-chunk content & keying.
+Clarify key derivation when the content spans multiple chunks: per-chunk one-time keys vs. PRG stream from a "dream key"; ordering of decryption; and whether revocation guarantees hold per chunk. Reconcile "key length equals content length" with the chunk-level description.
+
+Deniability & side channels.
+Provide a crisp definition (adversary's observation abilities; when XOR-pattern comparison is feasible). Optionally discuss a lightweight public-key envelope to mitigate pattern leakage, with trade-offs.
+
+Additional Questions:
+Is the paper in the expected journal style?: Yes
+
+If not, please note what key sections or components are missing (abstract, related work, evaluation, references, etc).:
+
+Are the references comprehensive and appropriate?: Yes
+
+If key references are missing, please list them. If there are too many self-citations, please suggest alternatives.:
+
+Relative to the subject material, is the paper understandable without requiring too much effort on the part of the reader?: Yes
+
+Please rate the relevance of the paper to TWEB from 1 to 5, 1 being the lowest/poorest score.: 4
+
+Is there enough new content in this paper to distinguish it from other works?
+
+In answering this question, you can use the Manuscript Central capabilities for external searches on both the authors and title as well as the "Search for a Companion Paper" feature.  If significant parts of the paper have been previously published, authors are supposed to indicate this with their submission.  Unfortunately, not all authors do this.: Yes
+
+If the paper is an extended version of a conference paper, does the submission provide enough new material for journal publication?: Yes
+
+If the answer to either of these questions is no, please explain.:
+
+Manuscripts submitted to TWEB should not be concurrently under review for publication in another conference or journal.  If you suspect that the same paper is simultaneously being considered for publication elsewhere, the editor should be notified.:
+
+Is the work primarily theoretical, practical or is it a survey?: P
+
+Is the content technically sound?: Yes
+
+Please explain if not or if you are unsure.:
+
+Rate the level of originality and innovation of the work reported from 1 to 5, 1 being the lowest/poorest score.: 4
+
+Describe how the submission advances the state of the art in the field.: The paper operationalizes "deletion in immutable decentralized storage" by introducing a protocol-level dream-path diversion that turns "delete" into revocation of key recomputation along a controlled path. It formalizes the Δ/Π/dream(·) recursion, defines D/R/E/A/M properties, and proposes a calibratable success metric linking neighborhood penetration to the number of path steps ("n nines ↔ n hops"). Compared to key-erasure intuition, this offers an actionable, verifiable mechanism with clear system hooks and measurable security knobs.
+
+Rate the impact of this work on the research community, 1 being the lowest/poorest score.: 4
+
+Suggest beneficiaries from the work.: Distributed systems & Web research (decentralized storage, DHT security).
+
+Security & privacy researchers (revocation, deniable encryption, compliance-aware storage).
+
+Measurement & protocol-design groups evaluating availability vs. revocability trade-offs.
+
+Rate the impact of this work on the wider community, 1 being the lowest/poorest score.: 3
+
+Suggest beneficiaries from the work.: Decentralized storage platforms (e.g., Swarm/IPFS-like systems) seeking policy-compatible deletion without central authorities.
+
+Data controllers/compliance teams (GDPR/CCPA-style "right to erasure" interpretations on immutable media).
+
+Infrastructure operators designing incentives and reliability for revocation-aware routing.
+
+Please help ACM create a more efficient time-to-publication process: Using your best judgment, what amount of copy editing do you think this paper needs?: Light
+
+Most ACM journal papers are researcher-oriented. Is this paper of potential interest to developers and engineers?: Yes

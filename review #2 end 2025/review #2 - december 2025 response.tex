@@ -1,0 +1,162 @@
+\documentclass[11pt]{article}
+%
+\usepackage{graphicx, amsmath, amsfonts, amssymb, amsxtra, bm}
+\usepackage[dvipsnames]{xcolor}
+\usepackage[protrusion=true, expansion=true]{microtype}
+\usepackage[authoryear]{natbib}
+\usepackage[font={small}, bf]{caption}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper, margin=1in]{geometry}
+\usepackage{mathptmx}
+\usepackage{enumitem}
+\usepackage{verbatim}
+\usepackage{url}
+%
+\newcommand{\SI}{SI}
+\newcommand{\ud}{\text{d}}
+\newcommand{\mat}[1]{\bm{#1}}
+\newcommand{\cov}{\text{cov}}
+\newcommand{\rem}[1]{\textcolor{red}{\textrm{#1}}}
+\newcommand{\citeapos}[1]{\citeauthor{#1}'s (\citeyear{#1})}
+\let\originalleft\left
+\let\originalright\right
+\renewcommand{\left}{\mathopen{}\mathclose\bgroup\originalleft}
+\renewcommand{\right}{\aftergroup\egroup\originalright}
+\renewcommand{\thefigure}{R\arabic{figure}}
+\renewcommand{\thetable}{R\arabic{table}}
+\renewcommand{\theequation}{R\arabic{equation}}
+\newcommand{\us}{\rm \setlength{\leftskip}{0.3cm} \setlength{\rightskip}{0.3cm}}
+\newcommand{\them}{\it \setlength{\leftskip}{0cm} \setlength{\rightskip}{0cm}}
+\newcommand{\todo}{\color{BrickRed}}
+% \newcommand{\viktorcheck}{\color{teal}}
+% \newcommand{\done}{\color{Green}}
+\newcommand{\normal}{\color{black} \rm \setlength{\leftskip}{0cm} \setlength{\rightskip}{0cm}}
+
+
+\setlength{\parskip}{0.8em}
+\setlength{\parindent}{0em}
+\bibpunct{(}{)}{,}{a}{}{,}
+\clubpenalty = 10000
+\widowpenalty = 10000
+\DeclareMathAlphabet{\mathcal}{OMS}{txsy}{m}{n}
+
+
+
+\begin{document}
+\normal
+
+\begin{flushright}
+  Dr.~Ryen White\\
+  Editor-in-Chief\\
+  Transactions on the Web
+\end{flushright}
+
+
+\begin{flushleft}
+\textbf{Manuscript ID: } \texttt{TWEB-25-0111.R1} \\
+``A Dream Come True: Deletable Content in Immutable Storage.''\\
+Viktor Tr\'on, Henning Diedrich \\
+\end{flushleft}
+
+
+Dear Dr.~White,
+
+Thank you for the chance to revise and resubmit our manuscript to ACM TWEB. 
+
+This is the note to indicate the revisions we undertook to cover all comments.
+
+Besides, with some help from those mentioned in the acknoledgments, we massively improved the flow and readability of the text.
+\bigskip
+
+Thank you once again for your time and attention dedicated to our work,
+
+Viktor Tr\'on and Henning Diedrich
+
+\section*{Response to Editor}
+
+\done
+
+\them
+
+In your revised version, use the ACM format for your paper described at:
+
+https://www.acm.org/publications/authors/submissions
+
+\us
+
+
+We double checked and we believe we are using the right format, automatically updated to the August 25 changes as we are using Overleaf and    \textbackslash documentclass[manuscript,screen,review]\{acmart\} as advised.
+
+Should we be mistaken we would be grateful to receive a link to the template we should use. We double checked with 
+
+https://www.overleaf.com/latex/templates/association-for-computing-machinery-acm-generic-journal-manuscript-template/yffvrvzbhhpt
+
+\normal
+
+\section*{Response to Reviewer comments}
+
+\subsection*{Reviewer 1}
+
+\done
+\them
+
+The shift from "Security analysis" (Section 5) to "Implementation Constraints" (Section 6) is somewhat abrupt. Add a 1-sentence transition, e.g., "After verifying the security of the DREAM protocol, we further discuss its practical implementation constraints to clarify the conditions for real-world deployment". This ensures a smoother logical flow between chapters.
+
+\us
+
+We inserted a transition sentence as advised.
+
+\done
+\them
+
+Check all sections to confirm the spelling of "decentralized". The manuscript currently uses both "decentralised" (British English) and "decentralized" (American English) in different parts. Select one consistent spelling (either British or American) and apply it uniformly to avoid terminology confusion for readers.
+
+\us
+
+Thank you -- we double checked everything, also with a separate spell checker.
+
+(We found that the spelling "decentralized" is not flagged with British setting in Overleaf or Word; but of course, inconsistent, thanks again for the heads-up.)
+
+\normal
+\them
+
+\normal
+
+\subsection*{Reviewer 2}
+
+\them
+\viktorcheck
+
+Threat model \& independence assumption.
+The analysis relies on (near) IID neighborhood infiltration. Please (i) state the applicability limits; (ii) discuss correlated/Sybil/Eclipse/coalition infiltration; (iii) offer a conservative bound or back-of-the-envelope calibration when infiltration events are correlated; and (iv) mention simple mitigations (multi-path derivation, randomized prefix depth/step, batched mixing).
+
+\us
+
+We added section \textbf{5.1 Correlated Infiltration} to discuss all angles brought up in the comment.
+
+\normal
+\them
+\viktorcheck
+
+Multi-chunk content \& keying.
+Clarify key derivation when the content spans multiple chunks: per-chunk one-time keys vs. PRG stream from a "dream key"; ordering of decryption; and whether revocation guarantees hold per chunk. Reconcile "key length equals content length" with the chunk-level description.
+
+\us
+
+We added section \textbf{3.7 Multi-Chunk Content} to address the raised questions.
+
+\normal
+\them
+\viktorcheck
+
+Deniability \& side channels.
+Provide a crisp definition (adversary's observation abilities; when XOR-pattern comparison is feasible). Optionally discuss a lightweight public-key envelope to mitigate pattern leakage, with trade-offs.
+
+\us
+
+We pulled the section about deniability into the new sub section \textbf{5.3 Deniability} and added the requested clarification and extension.
+
+\normal
+
+\end{document}
