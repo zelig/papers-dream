@@ -269,7 +269,7 @@ A Swarm chunk $c$ is an association $\langle a, c'\rangle$ consisting of a 32-by
 \mathit{Content} & \defeq & \mathit{Data} \times \mathit{Meta}\\
 \mathit{Chunk}&\defeq& \mathit{Address}\times \mathit{Content}\\
 \mathit{CAC} &:& Data \times Meta\to  \mathit{Chunk}\\
-\mathit{CAC}(p,m)&\defeq&\langle \mathit{Keccak}(m\oplus\mathit{BMTRoot}(p)),m \oplus p\rangle
+\mathit{CAC}(p,m)&\defeq&\langle \mathit{Keccak}(m\mid\mathit{BMTRoot}(p)),m \mid p\rangle
 \end{eqnarray}
 
 We also define:
@@ -319,7 +319,7 @@ Key construction begins with a chunk-sized (4096-byte) sequence $p_0$ determinis
 %
 \footnote{For example, the Keccak sponge function used throughout Ethereum for hashing provides this capability. Alternatively, the block cipher encryption using the seed as initial nonce may be applied to a fixed constant chunk, such as all zeros.}
 %
-The protocol sends this first iteration stage of the key as a content-addressed chunk (CAC) $c_0 = \langle a_0, m \oplus p_0\rangle$ to the network, where $m$ denotes metadata supporting key generation. As specified by Swarm's push-sync protocol, a node $\node_0$ in the neighbourhood designated by the chunk address $a_0$ is guaranteed to eventually receive this chunk. The dream protocol then requires the closest node to update the key from $p_0$ to $p_1$ using batch identifier $b$ and the \emph{key update function} $\Delta$. Wrapped as a new chunk $c_1 =\langle a_1, m \oplus p_1\rangle$, it is forwarded toward the neighbourhood designated by its new content address $a_1$. The node that is closest to $a_1$ performs such an update and thus becomes the next node on the dream path ($\node_0\ldots\node_n$ in figure~\ref{fig:retrieval}).%
+The protocol sends this first iteration stage of the key as a content-addressed chunk (CAC) $c_0 = \langle a_0, m \mid  p_0\rangle$ to the network, where $m$ denotes metadata supporting key generation. As specified by Swarm's push-sync protocol, a node $\node_0$ in the neighbourhood designated by the chunk address $a_0$ is guaranteed to eventually receive this chunk. The dream protocol then requires the closest node to update the key from $p_0$ to $p_1$ using batch identifier $b$ and the \emph{key update function} $\Delta$. Wrapped as a new chunk $c_1 =\langle a_1, m \mid p_1\rangle$, it is forwarded toward the neighbourhood designated by its new content address $a_1$. The node that is closest to $a_1$ performs such an update and thus becomes the next node on the dream path ($\node_0\ldots\node_n$ in figure~\ref{fig:retrieval}).%
 %
 \footnote{Note that, due to forwarding Kademlia, routing is performed by relaying messages via multiple hops using keep-alive peer connections as the transmission channel. However, for the dream protocol, these intermediate forwarding nodes are not relevant (see figure~\ref{fig:pushsync}).}
 %
@@ -327,7 +327,7 @@ The protocol sends this first iteration stage of the key as a content-addressed 
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=\columnwidth]{figs/retrieval.pdf}
-    \caption{Left: The path of the solid arrows represents the dream path, a series of neighbourhoods traversed by the dream protocol. The grantee posts the chunk data $p_0$ generated from $g$ and wrapped as chunk $c_0=\langle a_0, m \oplus p_0\rangle$, indistinguishable from a standard Swarm upload. Through multiple forwarding hops, $c_0$ arrives where it would be stored according to $a_0 = \mathit{Address}(c_0)$. The dream key is created as the chunk-long piece of data journeys through the neighbourhoods designated by $\mathit{Address}(c_0),\ldots,\mathit{Address}(c_n)$, picked up by the closest nodes $\node_0 \ldots \node_n$. Eventually, at step $n+1$, $c_{n}$ is received back by grantee $G$ at address $a$ who can extract the dream key $k=\mathit{Data}(c_n)$.
+    \caption{Left: The path of the solid arrows represents the dream path, a series of neighbourhoods traversed by the dream protocol. The grantee posts the chunk data $p_0$ generated from $g$ and wrapped as chunk $c_0=\langle a_0, m \mid p_0\rangle$, indistinguishable from a standard Swarm upload. Through multiple forwarding hops, $c_0$ arrives where it would be stored according to $a_0 = \mathit{Address}(c_0)$. The dream key is created as the chunk-long piece of data journeys through the neighbourhoods designated by $\mathit{Address}(c_0),\ldots,\mathit{Address}(c_n)$, picked up by the closest nodes $\node_0 \ldots \node_n$. Eventually, at step $n+1$, $c_{n}$ is received back by grantee $G$ at address $a$ who can extract the dream key $k=\mathit{Data}(c_n)$.
     Right: For each step $0\le i<n$ on the way, node $\node_i$ updates $c_i$ using the update function $\Delta$. Information locally available to nodes specific to that neighbourhood ($\mathit{BB}_t(b,c_i)$) serves as input to the key update function ($\Delta$). 
     The ($\emph{1.}$) incoming chunk $c_{i}$ is used to ($\emph{2.}$) find in the reserve the set $\mathit{BB}_t(b,c_i)$, i.e. consisting of chunks with valid postage stamps issued under $b$ that fall into the batch bucket designated by the input chunk address $\mathit{Address}(c_i)$. Thee data of these chunks are then XOR-ed with the input chunk data $\mathit{Data}(c_{i})$ to create $p_{i+1}$. The result is wrapped as chunk $c_{i+1}$ and uploaded ($\emph{3.}$).}
     \Description[Dream Path]{The path that is how the network stores a dream key.}
@@ -344,7 +344,7 @@ Critically, because control over these conditions rests with the the uploader, t
 \begin{figure}[htbp]
   \centering
     \includegraphics[width=\columnwidth]{figs/deflected.pdf}
-  \caption{Deletion. The dream path is shown as `deflected' by a new chunk $u$, stamped by postage batch $b$ and sent by uploader $U$ ($\emph{1.}$).
+  \caption{Deletion. The dream path is shown as `deflected' by a new chunk $u$, stamped by postage batch $b$ and sent by uploader $U$.
   An uploader may alter the dream path by inserting a chunk at time $t'$ into the relevant batch bucket at any step $0\le i< n$. As a result, $\mathit{BB}_{t}(b,c_i)\neq \mathit{BB}_{t''}(b,c_i)$ for all $t<t'<t''$ for at least those steps $i$ effected. This change produces a different output chunk $c_{i+1}$ at step $i$, whereby the dream path is \emph{deflected} and will not terminate with the grantee, who is now unable to retrieve the dream key to access the `deleted'  content.}
   \Description[Update Function]{The function that describes how each node on the dream path incrementally changes the incoming dream key.}
 \label{fig:deflected}
