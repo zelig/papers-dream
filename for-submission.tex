@@ -22,7 +22,8 @@
 %% When submitting camera ready or to TAPS, please change the command
 %% to \documentclass[sigconf]{acmart} or whichever template is required
 %% for your publication.
-\documentclass[sigconf]{acmart}
+% \documentclass[sigconf]{acmart}
+\documentclass[singlecolumn]{acmart}
 %%
 % \documentclass[manuscript, screen, review]{acmart}
 \usepackage{amsthm}
@@ -339,7 +340,7 @@ Every node that receives the evolving dream chunk wraps it using data from its \
 As long as the initial key $p_0$ and the metadata $m$ are the same {and} the relevant parts of the reserve $BB$ remain unchanged, the system generates the same dream key, allowing the grantee to decrypt and access the deletable content.
 
 Critically, because control over these conditions rests with the the uploader, they are the only party able to actively prevent the grantee from re-calculating the key.
-%
+    %
 %
 \begin{figure}[htbp]
   \centering
@@ -515,7 +516,7 @@ However, a network observer may have visibility into all stored data, including 
 \footnote{An adversary possessing both A' and C' could calculate $A'\xor C'$ to find patterns in the result. However, these patterns are conditioned on the underlying data being clear text that reveals spaces, vowels, consonants or punctuation in a particular distribution. Without such patterns, in the case that the underlying data is uniformly distributed 'noise' as results from asymmetric encryption, these patterns are not discernable and cannot help break the pad. }
 
 After verifying the security of the dream protocol, we further discuss its
-practical implementation constraints to clarify the conditions for real-world deployment
+practical implementation constraints to clarify the conditions for real-world deployment.
 
 \section{Implementation constraints}\label{sec:constraints}
 
@@ -546,7 +547,7 @@ The authors would like to thank György Barabás, Andrea Robert for help with te
 %%
 %% The next two lines define the bibliography style to be used, and
 %% the bibliography file.
-\newpage
+% \newpage
 \bibliographystyle{ACM-Reference-Format}
 \bibliography{refs}
 
